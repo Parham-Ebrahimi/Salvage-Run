@@ -208,3 +208,11 @@ STOP: tell the user to save/publish the verified current place to Roblox. Wait f
 - Reverted the wall-related repo changes as well: Config remains WallHeight=32 and WallThickness=4; build-world and verify-world retain the previous wall logic; the new wall geometry module and resize routine were removed. Other existing source changes preserved. VERIFIED reverted Config source is synced in Studio.
 - FOLLOW-UP ROLLBACK VERIFICATION: all 26 walls are anchored/collidable, center Y=16, height 32 and thickness 4, empty MaterialVariant as before this batch. Sizes: 20 StripWall (4,32,350), 2 BaseWall (4,32,180), 2 Shoulder (100,32,4), BackWall (360,32,4), EndWall (160,32,4). Canonical structural inventory PASS; plot overlap pairs zero; no Baseplate; broad overall Passed=false remains accurate.
 - STOP ON ERROR / SAVE POINT: report the failed and fully rolled-back wall batch. Ask the user to save/publish the successfully restored overlap repair. Requested wall enlargement and stud-wall styling are NOT DONE; await further instruction before retrying. No Play control taken.
+# Overnight 2026-10-02 — protected builder verification
+
+T0 master backlog and owner overrides recorded. T4 command-context wrapper
+generates dependencies from repo source. Complete builder tested in protected
+Studio Edit mode: structural inventory passed, zero plot-border overlap pairs,
+no missing templates; original world restored by reference. No permanent world
+edit and no overnight playtest yet. Historical broad candidates remain diagnostic.
+

@@ -1,0 +1,26 @@
+{
+  "name": "salvage-run-live",
+  "tree": {
+    "$className": "DataModel",
+    "$ignoreUnknownInstances": true,
+    "ReplicatedStorage": {
+      "$ignoreUnknownInstances": true,
+      "Shared": { "$path": "src/shared" }
+    },
+    "ServerScriptService": {
+      "$ignoreUnknownInstances": true,
+      "Server": { "$path": "src/server" }
+    },
+    "StarterPlayer": {
+      "$ignoreUnknownInstances": true,
+      "StarterPlayerScripts": {
+        "$ignoreUnknownInstances": true,
+        "Client": { "$path": "src/client" }
+      }
+    },
+    "Workspace": {
+      "$ignoreUnknownInstances": true,
+      "$attributes": { "__Rojo_ConnectionUrl": "http://localhost:34872" }
+    }
+  }
+}

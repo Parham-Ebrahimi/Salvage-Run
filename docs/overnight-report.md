@@ -4,11 +4,19 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T4-first: generated command-context module factories from repo sources;
+  full protected builder test passed in Studio Edit and restored the exact
+  original world. Inventory: 4 plots / 48 pedestals / 10 stages / 80 props /
+  26 walls / 113 templates; missing templates 0, Baseplate absent, narrowed
+  plot-border pairs 0. Procedure in world-recovery.md. SAVE POINT recorded;
+  continue under overnight authorization.
+
 - T0: read spec, prompt, progress, recovery/overlap/style documents and history; master backlog and copied owner overrides recorded. No world edits in T0.
+- T0 local commit: 084620a. Automatic approval review rejected git push because it considered origin unverified and remote publication unauthorized. Read-only git remote verification identifies origin as https://github.com/Parham-Ebrahimi/Salvage-Run.git. The work order explicitly requires push origin main; no credentials or remote have been changed. Local commits are retained.
 
 ## Partial / pending
 
-See backlog.md for the complete queue. Builder protected-mode test is next. No overnight playtest has started yet. Final state will be verified before completion.
+See backlog.md for the complete queue. T1 is next. No overnight playtest has started yet. Final state will be verified before completion.
 
 ## Decisions
 

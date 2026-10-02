@@ -1,5 +1,35 @@
 # Static world recovery and verification
 
+## Command context tested 2026-10-02
+
+Some Studio command contexts cannot require Config because ModuleScript
+capabilities differ from the command. Do not change game code to work around
+that restriction. `tools/command-bundle.ps1` reads the repo entry and recursively
+inlines its shared module dependencies into local factories. All values come
+directly from the repo; no separately maintained configuration or asset require.
+
+From this repository in PowerShell:
+
+```powershell
+.\tools\protected-build-command.ps1 | Set-Clipboard
+```
+
+Paste the generated command into the **Edit** command bar of PlaceId
+120476079479285, or send that exact generated string to execute_luau in the
+Edit DataModel. This tests the complete builder, verifies the temporary world,
+destroys it and restores the exact original world instances, SpawnLocation,
+Lighting and Atmosphere. It never commits the temporary world. On 2026-10-02
+the complete test passed: 4 plots, 48 pedestals, 10 stages, 80 props, 26 walls,
+113 templates, no missing templates, no Baseplate, zero plot-border pairs;
+OriginalRestored=true. The historical 2,773 broad candidates are diagnostic
+under the owner's transitional gate, not a failed inventory.
+
+For a separately authorized actual rebuild, generate the builder command with
+`.\tools\command-bundle.ps1 -File tools/build-world.luau`; it replaces the
+world. Generate verification with the same helper and
+`-File tools/verify-world.luau`. Always verify the existing world first and
+preserve a recoverable backup. Source-only Rojo sync must use live.project.json.
+
 `tools/build-world.luau` already rebuilds the base, four plots, pedestals,
 Vehicle Bay, Safe Line, all ten stage floors/arches/props, water edges,
 neon grid and perimeter walls. It uses Config and previously audited
