@@ -89,9 +89,10 @@ if spawn then check((spawn.Position-Vector3.new(-129,1,110)).Magnitude<.01,"Spaw
 local Overlap=require(game.ReplicatedStorage.Shared.WorldOverlap)
 local overlap=Overlap.ScanFloors(workspace)
 local borders=Overlap.Scan(plots,function(p)return p.Name=="Border"end)
+local grounding=require(game.ReplicatedStorage.Shared.WorldGrounding).Check(world)
 assert(#errors==0,"WORLD INVENTORY FAILED:\n"..table.concat(errors,"\n"))
 local sideBorders=0
 if plots then for _,p in plots:GetDescendants() do if p:IsA("Part") and p.Name=="Border" and p.Size.X==1 and p.Size.Z==76 then sideBorders+=1;check(math.abs(p.Position.Y-.54)<.00001,"Lowered plot side border") end end end
 check(sideBorders==8,"Eight lowered plot side borders")
 assert(#errors==0,table.concat(errors,"\n"))
-return {Passed=overlap.Passed and borders.PairCount==0,InventoryPassed=true,FloorOverlapCheckPassed=overlap.Passed,FloorOverlapCount=overlap.PairCount,PlotBorderOverlaps=borders.PairCount,FloorOverlaps=overlap,PlaceId=game.PlaceId,Plots=count(plots),Pedestals=pedestals,Stages=count(stages),StageProps=propCount,Templates=count(assets),Items=items,Vehicles=vehicles,Mobs=mobs,PropTemplates=props,PerimeterWalls=count(walls),Stage10Walls=finalWalls,Baseplate=false,LoweredBorders=sideBorders,UIKits=game.ServerStorage:FindFirstChild("UIKits")~=nil}
+return {Passed=overlap.Passed and borders.PairCount==0,InventoryPassed=true,FloorOverlapCheckPassed=overlap.Passed,FloorOverlapCount=overlap.PairCount,PlotBorderOverlaps=borders.PairCount,PropGrounding=grounding,FloorOverlaps=overlap,PlaceId=game.PlaceId,Plots=count(plots),Pedestals=pedestals,Stages=count(stages),StageProps=propCount,Templates=count(assets),Items=items,Vehicles=vehicles,Mobs=mobs,PropTemplates=props,PerimeterWalls=count(walls),Stage10Walls=finalWalls,Baseplate=false,LoweredBorders=sideBorders,UIKits=game.ServerStorage:FindFirstChild("UIKits")~=nil}

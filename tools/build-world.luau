@@ -2,6 +2,7 @@
 local C=require(game.ReplicatedStorage.Shared.Config)
 local Geometry=require(game.ReplicatedStorage.Shared.WorldGeometry)
 local Style=require(game.ReplicatedStorage.Shared.VisualStyle)
+local Grounding=require(game.ReplicatedStorage.Shared.WorldGrounding)
 local old=workspace:FindFirstChild("SalvageWorld"); if old then old:Destroy() end
 local world=Instance.new("Folder"); world.Name="SalvageWorld"; world.Parent=workspace
 local function part(name,size,pos,color,material,parent)
@@ -68,7 +69,7 @@ for i,s in C.Stages do
   if template then
    local m=template:Clone();m.Name=key;m.Parent=props
    local _,size=m:GetBoundingBox();m:ScaleTo(math.min(W.PropMaxSize/math.max(size.X,size.Y,size.Z),1))
-   local _,scaled=m:GetBoundingBox();m:PivotTo(CFrame.new(x,scaled.Y/2,z)*CFrame.Angles(0,k*.7,0))
+   m:PivotTo(CFrame.new(x,0,z)*CFrame.Angles(0,k*.7,0));Grounding.Ground(m,floor.Position.Y+floor.Size.Y/2)
    for _,p in m:GetDescendants() do if p:IsA("BasePart") then p.CanCollide=true end end
   else
    table.insert(missing,key);part("MISSING "..key,Vector3.new(7,5,5),Vector3.new(x,2.5,z),s.Color:Lerp(Color3.new(.5,.5,.5),.35),Enum.Material.Metal,props)
