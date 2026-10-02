@@ -12,6 +12,25 @@ so use it only for a requested recovery and only in Edit mode.
 and the current `src/` scripts. It does not prove that a cloud place has
 been published, and sync must preserve the user's editor-only UIKits.
 
+For source editing of the existing Studio place, use:
+
+```powershell
+rojo serve live.project.json --port 34872
+```
+
+Stop the previous Rojo server before starting this one. This configuration
+preserves the Studio world, assets, materials and UIKits; it declares no
+Baseplate or static-world snapshot paths. Do not use the default snapshot
+project for live sync while Studio contains newer world edits.
+
+On 2026-10-02 the old running server's actual tree still contained a
+512 × 20 × 512 Baseplate at (0,-10,0); Play-server auto-reconnect restored
+it despite its absence in Edit. The user's reset loaded the current
+default snapshot project and removed that definition, but also reverted
+Stage 1 styling and the lowered plot borders. Source-only sync and replay
+of those verified edits are pending. No new playtest was started to
+confirm the reset's runtime effect.
+
 Execute the repo source of `tools/verify-world.luau` through Studio MCP in
 the connected Edit DataModel immediately after every world mutation.
 It is read-only and asserts the expected inventory, template sanitation,

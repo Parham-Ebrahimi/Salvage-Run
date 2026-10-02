@@ -83,5 +83,6 @@ for i=1,10 do child(assets,"vehicle_"..i,"Model");child(assets,"mob_"..i,"Model"
 check(game.Lighting:FindFirstChildOfClass("Atmosphere")~=nil,"Stage atmosphere exists")
 local spawn=child(workspace,"SpawnLocation","SpawnLocation")
 if spawn then check((spawn.Position-Vector3.new(-129,1,110)).Magnitude<.01,"Spawn on the first plot")end
+local overlap=require(game.ReplicatedStorage.Shared.WorldOverlap).Scan(workspace)
 assert(#errors==0,"WORLD INVENTORY FAILED:\n"..table.concat(errors,"\n"))
-return {Passed=true,PlaceId=game.PlaceId,Plots=count(plots),Pedestals=pedestals,Stages=count(stages),StageProps=propCount,Templates=count(assets),Items=items,Vehicles=vehicles,Mobs=mobs,PropTemplates=props,PerimeterWalls=count(walls),Stage10Walls=finalWalls,Baseplate=false,UIKits=game.ServerStorage:FindFirstChild("UIKits")~=nil}
+return {Passed=overlap.PairCount==0,InventoryPassed=true,TopOverlapCheckPassed=overlap.PairCount==0,TopOverlapCount=overlap.PairCount,TopOverlaps=overlap,PlaceId=game.PlaceId,Plots=count(plots),Pedestals=pedestals,Stages=count(stages),StageProps=propCount,Templates=count(assets),Items=items,Vehicles=vehicles,Mobs=mobs,PropTemplates=props,PerimeterWalls=count(walls),Stage10Walls=finalWalls,Baseplate=false,UIKits=game.ServerStorage:FindFirstChild("UIKits")~=nil}

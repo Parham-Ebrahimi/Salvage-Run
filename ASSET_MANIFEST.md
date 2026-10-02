@@ -49,3 +49,17 @@ Creator Store assets are visual shells only. Every insert is quarantined in Serv
 | 135827610386594 | Test Tube | BeanifyMe | test tube | 0 | none | 57 parts |
 
 Full raw safety results are in `docs/asset-audit.json`. Stale sandbox capability metadata is cleared after script removal to allow safe visual cloning. Spaceship wreck: clean six-part broken hull fallback; both Creator Store candidates exceeded the mobile part budget.
+
+
+## Visual-style sample candidates — pending approval
+
+| Asset ID | Name / creator | Sample use | Scripts kept | Scripts removed | Verification |
+|---|---|---|---|---|---|
+| 11120912366 | 2008-2024 Stud Materials PBR / ReeceTheUncancelable | Selected regular 2022 Stud color and normal maps for shared SalvageStud | 0 | none present | Definition installed on four isolated samples; remote fetch failed, visual review pending; candidate import deleted |
+| 110535478048879 | Diamond Plate Metal Texture Material Kit / CrystalEchoSt3alth20 | Selected PBR maps for shared SalvageDiamondPlate trim | 0 | Constant; TextureConfiguration | Both executable descendants deleted; variant installed on preview trim; remote fetch failed, visual review pending; candidate import deleted |
+| 7447638611 | Stud Texture / born2swaos | Tried advertised one-stud tile as alternate | 0 | none present | Remote fetch failed; not adopted; candidate import deleted |
+
+Only `src/shared/VisualStyle.luau` holds the editable map IDs and global scale. These candidates have not been applied to the existing map or template inventory. Fetch failures also affect an existing remote game mesh, so candidate usability is not settled by this session. Do not claim approval or working surface rendering from insertion alone.
+
+
+Image-level provenance verified with Roblox MarketplaceService.GetProductInfo: stud color-map image 10509831729 is named 2022 studs alb.png and is uploaded by ReeceTheUncancelable (User ID 67061092), also creator of source model 11120912366. Found by the free Creator Store search stud material, then reading the regular 2022 Stud variant after quarantined insertion. Candidate remains unconfirmed and is awaiting replacement by the user's own image ID. The user selected MaterialVariants for block Parts only; MeshParts remain smooth and color-only. No rollout authorized.

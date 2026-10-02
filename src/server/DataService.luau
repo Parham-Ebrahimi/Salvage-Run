@@ -7,6 +7,15 @@ local store=nil
 local storeOK,storeResult=pcall(function()return DSS:GetDataStore(C.Data.Name..(Studio and "_Studio" or ""))end)
 if storeOK then store=storeResult end
 local token=game.JobId..":"..Http:GenerateGUID(false)
+local function lockAge(lock,now)
+ return math.max(0,now-(tonumber(lock.UpdatedAt) or ((tonumber(lock.Expires) or now+C.Timing.SessionLease)-C.Timing.SessionLease)))
+end
+local function makeLock(player)
+ local now=os.time()
+ local lock={Token=token,Expires=now+C.Timing.SessionLease}
+ if Studio then lock.UserId=player.UserId;lock.UpdatedAt=now;lock.JobId=game.JobId end
+ return lock
+end
 function D.Default()
  return {Version=C.Schema,Cash=0,OwnedVehicles={["1"]=true},CurrentVehicle=1,Upgrades={["1"]={Speed=0,HP=0,Cargo=0,Boost=0}},Collection={},Pedestals={},PedestalCount=C.Economy.PedestalStart,Index={},Settings={AutoScrap=false,Music=true,SFX=true},DeepestBanked=0,LastOnline=os.time(),HasBanked=false}
 end
@@ -37,8 +46,18 @@ function D.Load(player)
   local ok,result=pcall(function()
    return store:UpdateAsync(key,function(record)
     record=type(record)=="table" and record or {}
-    if record.Lock and record.Lock.Token~=token and record.Lock.Expires>os.time() then busy=true;return nil end
-    record.Data=normalize(record.Data);record.Lock={Token=token,Expires=os.time()+C.Timing.SessionLease};return record
+    if record.Lock and record.Lock.Token~=token and record.Lock.Expires>os.time() then
+     local lock=record.Lock
+     -- Legacy Studio locks have no UserId; their player_<id> key identifies the user.
+     local sameUser=lock.UserId==nil or lock.UserId==player.UserId
+     local age=lockAge(lock,os.time())
+     if not (Studio and sameUser and age>=C.Timing.StudioLockReclaim) then
+      busy=true
+      if Studio then warn(string.format("[SalvageRun] Load refused: user=%d lockUser=%s owner=%s job=%s age=%.1fs expiresIn=%.1fs",player.UserId,tostring(lock.UserId or player.UserId),tostring(lock.Token),tostring(lock.JobId or "legacy/unknown"),age,lock.Expires-os.time())) end
+      return nil
+     end
+    end
+    record.Data=normalize(record.Data);record.Lock=makeLock(player);return record
    end)
   end)
   if ok and result and not busy then loaded=result.Data;break end
@@ -69,7 +88,7 @@ function D.Save(player,release)
   local ok=pcall(function()
    store:UpdateAsync(session.Key,function(record)
     if not record or not record.Lock or record.Lock.Token~=token then lockLost=true;return nil end
-    return {Data=copy,Lock=not release and {Token=token,Expires=os.time()+C.Timing.SessionLease} or nil}
+    return {Data=copy,Lock=not release and makeLock(player) or nil}
    end)
   end)
   if lockLost then session.Saving=false;player:Kick("Save session ownership changed. Rejoin to protect your progress.");return false end
@@ -82,7 +101,8 @@ function D.Save(player,release)
 end
 function D.Release(player) D.Save(player,true);D.Profiles[player]=nil;D.Sessions[player]=nil end
 function D.Init()
- task.spawn(function()while true do task.wait(C.Timing.DataSave);for player in D.Profiles do task.spawn(D.Save,player,false) end end end)
+ -- Studio renews often enough that a running test is not mistaken for a stale lock.
+ task.spawn(function()while true do task.wait(Studio and C.Timing.StudioLockRenew or C.Timing.DataSave);for player in D.Profiles do task.spawn(D.Save,player,false) end end end)
  game:BindToClose(function()
   local pending=0
   for player in D.Profiles do pending+=1;task.spawn(function()D.Save(player,true);pending-=1 end) end

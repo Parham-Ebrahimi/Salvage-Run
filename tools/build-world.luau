@@ -23,7 +23,7 @@ for i=1,W.PlotCount do
  part("Ground",Vector3.new(W.PlotSize,.3,W.PlotSize),Vector3.new(x,.2,W.PlotZ),Color3.fromRGB(157,179,150),Enum.Material.Grass,f)
  for _,edge in {-1,1} do
   part("Border",Vector3.new(W.PlotSize,1,1),Vector3.new(x,.6,W.PlotZ+edge*W.PlotSize/2),Color3.fromRGB(220,229,213),nil,f)
-  part("Border",Vector3.new(1,1,W.PlotSize),Vector3.new(x+edge*W.PlotSize/2,.6,W.PlotZ),Color3.fromRGB(220,229,213),nil,f)
+  part("Border",Vector3.new(1,1,W.PlotSize),Vector3.new(x+edge*W.PlotSize/2,.6-W.PlotSideBorderDrop,W.PlotZ),Color3.fromRGB(220,229,213),nil,f)
  end
  local spawn=part("Home",Vector3.new(5,.2,5),Vector3.new(x,.4,W.PlotZ-22),C.UI.Paper,nil,f);spawn.Transparency=1;spawn.CanCollide=false
  local income=part("Income",Vector3.new(14,4,1),Vector3.new(x,4,W.PlotZ-37),Color3.fromRGB(47,78,59),nil,f);sign(income,"$0/sec")

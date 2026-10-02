@@ -6,13 +6,15 @@ You are building a complete, playable Roblox game in one long autonomous session
 
 After every world mutation, run the read-only `tools/verify-world.luau` against the Edit DataModel. Expected inventory: four plots with twelve provisioned pedestals each, ten stage floors and arches, eight props per stage, 113 templates, 26 perimeter walls across the whole map (Stage 10 has two sides and the final end wall), and no `Workspace.Baseplate`. If the user is playing, defer Edit mutations and verification without stopping their session.
 
+For editing the existing Studio place, serve `live.project.json` on port 34872. It syncs source scripts and preserves unknown instances, including the Studio world, assets, MaterialService variants and UIKits. Reserve `default.project.json` for deliberate snapshot builds/recovery: syncing it can overwrite newer Studio world edits with the older repo snapshot. Check the running Rojo server's actual tree after restarting; editing a project file does not establish which configuration an existing server is serving.
+
 ## 0. Read first
 
 **This is a from-scratch build.** The Studio place is an empty Baseplate and the repo contains only this prompt, `docs/SALVAGE_RUN_DESIGN.md` and the Rojo scaffold. Nothing from any earlier version of this game exists; do not look for old code or save data. Delete the default Baseplate part once the new ground exists.
 
 1. Read `docs/SALVAGE_RUN_DESIGN.md` completely. It describes what the game is and how every system behaves. This prompt adds exact numbers, asset lists and build order, and wins any conflict.
 2. You are connected to Roblox Studio through the `Roblox_Studio` MCP server. Use it for everything inside the place: `search_asset` / `insert_asset` (Toolbox / Creator Store), `search_game_tree`, `inspect_instance`, `execute_luau`, `start_stop_play`, `user_keyboard_input`, `character_navigation`, `screen_capture`, `get_console_output`. Call `list_roblox_studios` first and pass the `studio_id` on every call.
-3. Code lives in this git repo and syncs into Studio through Rojo (`default.project.json`: `src/server` -> ServerScriptService, `src/client` -> StarterPlayer.StarterPlayerScripts, `src/shared` -> ReplicatedStorage). **Write and edit all game scripts as files in `src/`. Never edit Rojo-managed scripts through the MCP script tools**, because Rojo treats the files as the source of truth and will overwrite Studio-side edits on the next sync. Use the MCP only for the world: terrain, parts, inserted models, lighting, and for playtesting.
+3. Code lives in this git repo and syncs into Studio through Rojo (`default.project.json`: `src/server` -> ServerScriptService, `src/client` -> StarterPlayer.StarterPlayerScripts, `src/shared` -> ReplicatedStorage). **Write and edit all game scripts as files in `src/`. Never edit Rojo-managed scripts through the MCP script tools**, because Rojo treats the files as the source of truth and will overwrite Studio-side edits on the next sync. Use the MCP only for the world: Parts, inserted models, shared MaterialVariants, lighting, and for playtesting. Do not create Terrain.
 4. If `default.project.json` does not exist, run `rojo init` in the repo root, then continue.
 
 ## 1. The game in one paragraph
@@ -24,7 +26,7 @@ Players spawn on one of 4 plots in a wide base. They walk to a shared Vehicle Ba
 - **Build everything in this prompt**: all 10 stages, all 10 vehicles, enemies, rarity, Collection, pedestals, passive income, upgrades, Trade Up and saving. Driving quality is still the top priority (Phase 2 acceptance).
 - **No vehicle-gated stages.** Any vehicle may drive into any stage. Danger does the gating: a Skateboard that drives into Stage 3 should die quickly. Vehicle abilities are perks used during runs, not keys.
 - **Run start is an on-screen START button**, shown only while the player stands in the Vehicle Bay and is in BASE state. It must work by mouse click and touch. If the player owns more than one vehicle, show a small vehicle picker next to START (defaults to the best owned vehicle).
-- **Toolbox first.** Vehicles, mob models, props and environment pieces come from the Toolbox (Creator Store) via `search_asset` / `insert_asset`. Built-in Roblox Terrain materials (Grass, Mud, Sand, Basalt, CrackedLava, Ice, Water, Concrete, Asphalt, etc.) and parts/materials/particles are always allowed for ground, hazards and effects.
+- **Toolbox first.** Vehicles, mob models, props and environment pieces come from the Toolbox (Creator Store) via `search_asset` / `insert_asset`. Use Parts and the shared material roles in Visual style for all world construction. Hazards use Parts and particles; stage theme names do not authorize Terrain or alternate body materials.
 - **Auto-scrap toggle** (Section 7).
 - **Mobile uses Roblox default controls.** Desktop uses WASD.
 
@@ -38,6 +40,18 @@ Players spawn on one of 4 plots in a wide base. They walk to a shared Vehicle Ba
 - **Vehicles must use a VehicleSeat** so WASD and the mobile thumbstick work through Roblox's default controls. Many Toolbox vehicles ship with their own chassis scripts (e.g. A-Chassis). Either use the model as a visual shell on our own VehicleSeat-based controller, or keep its chassis only if our Config values (max speed, acceleration, turn rate, HP) actually drive its behavior. Upgrades MUST change how the vehicle drives. If a vehicle's own scripts ignore our Config, replace them with our controller.
 - **Persistence** with DataStores and session locking (write a small session-locked wrapper or use ProfileStore). Save: Cash, owned vehicles, current vehicle, upgrade levels per vehicle, Collection (base type x mutation, best size), pedestal loadout, pedestal count, auto-scrap setting, Item Index discoveries. Version the schema.
 - **StreamingEnabled** on. Keep part counts reasonable; the map must run on a phone.
+
+## Visual style
+
+- All ground, walls, and vehicle/prop bodies use Parts or imported MeshParts, never Terrain. **Block-only rule:** apply the Row B shared stud MaterialVariant only to block Parts (`Part` with `Shape = Block`). Use one global `StudsPerTile`, so stud size is identical on all eligible blocks, independent of object size. Use a regular repeating square-stud pattern; never adjust tiling per object. **MeshParts stay smooth with just color:** use SmoothPlastic, no MaterialVariant, no surface studs, no mesh texture or SurfaceAppearance overlay; preserve their geometry and current color. Other non-block body Parts stay smooth.
+- Block Part metal trim uses a second shared diamond plate MaterialVariant. Glowing Part elements use `Enum.Material.Neon`; MeshParts retain the smooth, color-only rule.
+- Define the variants, texture-map asset IDs, names, material roles, and global tiling in **one place**, `src/shared/VisualStyle.luau`. Every world builder, fallback builder, template preparation step, and runtime vehicle/prop renderer must reference this module. Install its two variants under MaterialService in Edit and include them in the saved/build artifact; runtime code references the installed variants. Do not globally override a base material.
+- Never attach per-part Texture or Decal instances for these surfaces, or duplicate texture IDs/tiling elsewhere. Remove imported body texture overlays from styled clones; clear MeshPart texture IDs and SurfaceAppearance overrides so MeshParts remain color-only. Keep GUI, particle and signage assets separate from body surface styling.
+- Stage names such as Grassland, Foundry and Shipping Docks describe theme, color, props and hazards, not alternative ground materials. Preserve the current map colors during the sample review. This section overrides conflicting material descriptions in the design doc and imported assets. Loot mutation effects remain separate from vehicle/prop body styling.
+- Before rollout, compare the shared variant on the floor, wall and box block Parts while keeping the MeshPart smooth and color-only; show a real Studio capture and wait for the user's approval. Verify identical world-scale studs on the blocks, seamless repetition, smooth meshes, trim and Neon. Do not recolor or restyle the whole map before approval. `tools/preview-visual-style.luau` creates only the isolated approval samples; run `tools/verify-world.luau` after each world change.
+
+- **Temporary texture approval (2026-10-02):** the user approved third-party stud image `10509831729` for now. Record the uploader, source pack and date in `docs/visual-style-preview.md`; replace it with an owned upload before release. When the user supplies their own image ID, change the central ColorMap and clear the previous NormalMap unless a matching replacement is supplied.
+- **Rollout batches:** restyle block Parts only, one stage or one plot per batch. Leave MeshParts and other non-block instances untouched during these batches. Preserve colors, sizes, transforms and existing physics. Back up the full batch before mutation and roll it back if application or verification fails. Run `tools/verify-world.luau` after each batch; stop and tell the user to save/publish to Roblox, then wait for their confirmation before the next batch. If any error or usage limit occurs, stop and report. Never leave a batch half-applied.
 
 ## 4. Vehicles (Toolbox search terms in brackets)
 
@@ -62,20 +76,20 @@ Abilities stack: every vehicle keeps all perks of earlier vehicles.
 
 Follow design doc Section 3 for the base: 4 plots in one row at the back, wide base compound, open walkway, centered shared Vehicle Bay strip, green Safe Line across the full entrance, tall collidable perimeter walls. Plot labels per design doc Section 4 (no "PLOT 1"/"OPEN" text; other players' plots show their avatar headshot).
 
-The salvage strip runs forward from the Safe Line. **Each stage is ~350 studs long**, same width as the Stage 1 entrance, continuous, no vertical climbing. At each stage start build an arch with the stage number, name and a danger skull count (1-5), and show a short entry banner on the HUD. Each stage must be recognizable instantly by its floor color, fog/atmosphere tint and props. **Stage floor colors must be muted environmental tones so gold/neon rarity effects stay readable.**
+The salvage strip runs forward from the Safe Line. **Each stage is ~350 studs long**, same width as the Stage 1 entrance, continuous, no vertical climbing. At each stage start build an arch with the stage number, name and a danger skull count (1-5), and show a short entry banner on the HUD. Each stage must be recognizable instantly by its floor color, fog/atmosphere tint and props. **Stage floor colors must be muted environmental tones so gold/neon rarity effects stay readable. Every floor uses the shared stud variant; the table describes color and atmosphere, not alternative materials.**
 
 | # | Stage | Ground / atmosphere | Props (Toolbox) | Hazard | Mobs (Toolbox) | Stage value mult | Mob hit damage |
 |---|---|---|---|---|---|---|---|
-| 1 | Grassland | green Grass, light natural fog | [grass tuft, small rock, tree stump, wildflower] | shallow Mud patches (slow) | [wild boar, boar] | 1 | 10 |
-| 2 | Scrap Yard | gray Asphalt, light gray fog | [junk pile, scrap pile, tire stack, chain link fence] | oil slicks (spin-out) | [rat] small, fast | 5 | 19 |
-| 3 | Appliance Graveyard | tan Ground/Sand | [old fridge, washing machine, broken tv] stacks | Mud patches (slow) | [dog, wolf] | 25 | 36 |
-| 4 | Shipping Docks | teal metal plate, sea fog, Water edges | [cargo container, dock crane, anchor] | water edge (fall = damage) | [crab] | 120 | 69 |
-| 5 | Foundry | rust-red Basalt | [furnace, factory machine, smokestack] | CrackedLava pools (damage) | [lava golem, rock golem, fire monster] | 600 | 130 |
-| 6 | Restricted Zone | olive Grass + Mud | [barbed wire, military tent, sandbags, watchtower] | Mud belts | [robot soldier, sentry turret, robot] | 3,000 | 248 |
-| 7 | Research Facility | white tile, cool white fog | [lab equipment, server rack, computer desk] | laser gates (timed) | [lab robot, android] | 15,000 | 470 |
+| 1 | Grassland | muted green stud floor, light natural fog | [grass tuft, small rock, tree stump, wildflower] | shallow Mud patches (slow) | [wild boar, boar] | 1 | 10 |
+| 2 | Scrap Yard | gray stud floor, light gray fog | [junk pile, scrap pile, tire stack, chain link fence] | oil slicks (spin-out) | [rat] small, fast | 5 | 19 |
+| 3 | Appliance Graveyard | tan stud floor, sandy atmosphere | [old fridge, washing machine, broken tv] stacks | Mud patches (slow) | [dog, wolf] | 25 | 36 |
+| 4 | Shipping Docks | teal stud floor, diamond plate trim, sea fog, Part-based water edges | [cargo container, dock crane, anchor] | water edge (fall = damage) | [crab] | 120 | 69 |
+| 5 | Foundry | rust-red stud floor | [furnace, factory machine, smokestack] | Neon lava Part pools (damage) | [lava golem, rock golem, fire monster] | 600 | 130 |
+| 6 | Restricted Zone | olive stud floor, muddy atmosphere | [barbed wire, military tent, sandbags, watchtower] | Mud belts | [robot soldier, sentry turret, robot] | 3,000 | 248 |
+| 7 | Research Facility | white stud floor, cool white fog | [lab equipment, server rack, computer desk] | laser gates (timed) | [lab robot, android] | 15,000 | 470 |
 | 8 | Containment | toxic lime floor, green fog | [containment tank, biohazard barrel, test tube] | acid pools (damage) | [slime, mutant, zombie] | 75,000 | 894 |
-| 9 | Crash Site | scorched black Basalt, purple sky | [ufo, spaceship wreck, alien crystal] | crystal shards | [alien] | 350,000 | 1,700 |
-| 10 | The Anomaly | void black with glowing neon grid, starfield sky | [floating rock, portal, glitch cube] | gravity rifts (pull) | [shadow monster, void creature] | 1,700,000 | 3,230 |
+| 9 | Crash Site | scorched black stud floor, purple sky | [ufo, spaceship wreck, alien crystal] | crystal shards | [alien] | 350,000 | 1,700 |
+| 10 | The Anomaly | void-black stud floor with Neon grid, starfield sky | [floating rock, portal, glitch cube] | gravity rifts (pull) | [shadow monster, void creature] | 1,700,000 | 3,230 |
 
 Place **4-6 mobs per stage**, spread out, and **loot crates** (only Smash breaks them) in stages 3-10 that hold 3 bonus items. Keep the first ~20 studs past the Safe Line calm.
 

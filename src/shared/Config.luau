@@ -16,8 +16,9 @@ C.Economy = { PassiveRate=.01, OfflineRate=.5, OfflineCap=8*60*60, PedestalStart
 C.Pickup = { Density=12, Respawn=3, Light=0, Medium=.5, Heavy=1, MutationExtra=.75, Drain=1, ItemMaxSize=4.5, ItemHeight=.12, Animation=.65, NoiseRadius=45, CrateItems=3, CratesPerStage=2, CrateRespawn=30, CrateRadius=7 }
 C.Enemies = { PerStage=5, Aggro=30, Leash=8, AttackRange=7, Windup=.65, Cooldown=1.7, Speed=23, DeepSpeedGrowth=1.5, PatrolRadius=12, ProjectileSpeed=25, ProjectileLife=3, ProjectileRadius=3, PuddleLife=5, PuddleRadius=6, PuddleInterval=3, ReturnSpeed=17, SmallStages={ [1]=true,[2]=true,[3]=true,[4]=true }, Tick=.1, NoiseDuration=3, VisualSize=5, FlashTime=.25, CrushRadius=6 }
 C.Hazards = { Count=4, Width=18, Length=16, SlowFraction=.55, OilGrip=.35, DamageInterval=1, DamageFraction=.65, LaserPeriod=5, LaserOn=2.5, RiftPull=13, RiftRadius=22, WaterWidth=10, FallY=-8 }
-C.Timing = { ServerTick=.1, Snapshot=.25, RemoteWindow=1, RemoteLimit=12, ActionCooldown=.15, FailureHold=2, DataSave=60, SessionLease=180, LoadRetries=4, RetryDelay=2, LockWait=6, ShutdownDeadline=25, AnnouncementSeconds=6, TipSeconds=12 }
+C.Timing = { ServerTick=.1, Snapshot=.25, RemoteWindow=1, RemoteLimit=12, ActionCooldown=.15, FailureHold=2, DataSave=60, SessionLease=180, StudioLockReclaim=10, StudioLockRenew=5, LoadRetries=4, RetryDelay=2, LockWait=6, ShutdownDeadline=25, AnnouncementSeconds=6, TipSeconds=12 }
 C.Data = { Name="SalvageRun_v1", SaveRetries=3 }
+C.World.PlotSideBorderDrop=.06
 C.Physics.ChassisDensity=2
 C.Physics.ChassisFriction=0
 C.Physics.ChassisFrictionWeight=100
