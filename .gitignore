@@ -13,3 +13,5 @@ sourcemap.json
 /tools/.deps/
 /tools/rojo-inspect/
 /tools/plugin-settings-backup.json
+/.rojo-live.log
+/.rojo-live-error.log

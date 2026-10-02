@@ -34,6 +34,11 @@ function D.Execute(player,action,args,studioTest)
   local pos=Stage.Position(args.Stage,0,C.World.CalmDistance+C.World.SpawnDistance,C.Physics.Clearance)
   if run.State=="RUNNING" then run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero;run.LastPosition=pos;run.LastSample=os.clock();run.Deepest=math.max(run.Deepest,args.Stage)
   else player.Character:PivotTo(CFrame.new(pos)) end;return true
+ elseif action=="EntryFixture" and studioTest and run.State=="RUNNING" and C.Stages[args.Stage] then
+  local pos=Stage.Position(args.Stage,10,-5,C.Physics.Clearance)
+  run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero
+  run.LastPosition=pos;run.PreviousPosition=pos;run.LastSample=os.clock();run.Stage=math.max(0,args.Stage-1)
+  run.Vehicle:SetAttribute("ResetYaw",workspace:GetServerTimeNow());return {Stage=args.Stage,StartDepth=Stage.Depth(pos)}
  elseif action=="Bay" and studioTest then player.Character:PivotTo(CFrame.new(0,3,C.World.BayZ));return true
  elseif action=="Start" and studioTest then return ctx.Run.Start(player,data.CurrentVehicle)
  elseif action=="Status" and studioTest then return {State=run.State,Cash=data.Cash,Cargo=#run.Cargo,Unbanked=run.Unbanked,HP=run.HP,Deepest=run.Deepest,Pos=run.Vehicle and tostring(run.Vehicle.PrimaryPart.Position),Stats=run.Stats,Scratch=ctx.Data.Sessions[player].Scratch,Data=data}

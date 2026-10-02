@@ -214,6 +214,10 @@ T1 world batch verified in Studio: ten Arch models removed, fifty Parts and
 ten SurfaceGuis archived; no entrance/name signs remain. Structural inventory
 and zero plot-border pairs passed. Stage 1/5/10 driving test still pending.
 
+T1 driving acceptance subsequently passed with actual keyboard W crossings
+of stages 1, 5 and 10. Stage0 Fog fallback corrected and observed error-free.
+Stage10 centerline cosmetic grid collision recorded for T9; X10 entry works.
+
 T0 master backlog and owner overrides recorded. T4 command-context wrapper
 generates dependencies from repo source. Complete builder tested in protected
 Studio Edit mode: structural inventory passed, zero plot-border overlap pairs,

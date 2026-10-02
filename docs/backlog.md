@@ -33,6 +33,7 @@ Statuses distinguish implementation from observed acceptance. Historical evidenc
 | Collection, duplicates, placement, income | Partial | Ownership/same/bigger-size math, four local highlights, swap/remove, $4.8/sec sign, offline69120 formula tested; distinct-account multiplayer ownership remains unverified |
 | Upgrades/Trade Up/save continuity | Partial | Five-level Skateboard speed51.94 vs52; BMX unlock and ownership kept; historic real rejoin succeeded, current lock/popup ordering and balance acceptance pending |
 | Ready/offline-popup race | Partial | Credit works but Ready before asynchronous data load can lose popup, recorded Phase7; inspect and fix handshake |
+| Stage10 cosmetic grid collision | Not started | Overnight driving at X=0 stopped at Z=-3146.5 against the 0.045-high longitudinal grid; set decorative strips non-collidable through builder and replay script in T9 |
 | One-time first-player hint | Partial | Spec says Drive out, collect, come back disappears after first bank; HUD/Settings persistence acceptance pending |
 | Music/audio spec | Partial | Spec stage music and Music/SFX toggles; prompt reward/click sounds. Current prototype paths, no audible acceptance; T11b completes event wiring/load checks |
 | Mobile specifics | Partial | Default touch controls, thumbstick/jump clearance, Scale/UIScale/aspect constraints and >=44px targets specified; per-screen phone captures and vehicle test pending |

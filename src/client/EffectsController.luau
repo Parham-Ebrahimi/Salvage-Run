@@ -60,7 +60,7 @@ function E.Step(dt)
  else
   for _,p in E.Rings do p:Destroy() end;E.Rings={};E.RingVehicle=nil;E.Warning.Visible=false
  end
- local stage=s and s.State=="RUNNING" and s.Stage or 1
+ local stage=math.clamp(s and s.State=="RUNNING" and s.Stage or 1,1,#C.Stages)
  if stage and stage~=E.Stage then
   E.Stage=stage
   local cfg=C.Stages[stage];Tween:Create(E.Tint,TweenInfo.new(C.UI.Open),{TintColor=Color3.new(1,1,1):Lerp(cfg.Fog,.2)}):Play()

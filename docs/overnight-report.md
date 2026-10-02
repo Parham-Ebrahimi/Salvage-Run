@@ -4,6 +4,16 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T1 acceptance: actual W-driven crossings at Stage1 Z=-26.18, Stage5
+  Z=-1412.55, Stage10 Z=-3217.42 (X=10 to avoid existing cosmetic grid).
+  Stage entry remains functional. Fixed stage-0 client Fog lookup; subsequent
+  playtest Output had no script errors. All playtests stopped afterward.
+- T4 rejoin evidence so far: multiple stop/rejoin cycles separated by >10s
+  loaded the real Studio profile (Scratch=false), without lock refusal or kick.
+  No refused-load owner/age lines occurred; final dedicated lock test pending.
+- Source-only Rojo server reconnected and accepted through its UI. Verified
+  EntryFixture arrived from repo and arches/Baseplate remained absent.
+
 - T1 world batch: removed 10 Arch models containing 50 Parts (20 pillars,
   10 headers, 20 lights) and 10 SurfaceGuis with stage names/skulls. Originals
   copied to ServerStorage.ArtBackups.StageArchesBeforeO2. No gameplay source
