@@ -64,6 +64,8 @@ function E.Step(dt)
  if stage and stage~=E.Stage then
   E.Stage=stage
   local cfg=C.Stages[stage];Tween:Create(E.Tint,TweenInfo.new(C.UI.Open),{TintColor=Color3.new(1,1,1):Lerp(cfg.Fog,.2)}):Play()
+  local lighting=game:GetService("Lighting")
+  lighting.ClockTime=stage>=9 and 0 or 14
   game:GetService("Lighting").FogColor=cfg.Fog;game:GetService("Lighting").FogEnd=C.UI.StageFog
   local a=game:GetService("Lighting"):FindFirstChildOfClass("Atmosphere");if a then a.Color=cfg.Fog;a.Density=C.UI.StageAtmosphere end
   if C.Sounds.Music then E.Music.SoundId=C.Sounds.Music;E.Music.PlaybackSpeed=1+(stage-1)*.025;if s.Data.Settings.Music then E.Music:Play()end end

@@ -5,6 +5,9 @@
     "ReplicatedStorage": {
       "Shared": {
         "$path": "src/shared"
+      },
+      "SalvageAssets": {
+        "$path": "assets/snapshot/ReplicatedStorage/SalvageAssets"
       }
     },
     "ServerScriptService": {
@@ -22,18 +25,34 @@
     "Workspace": {
       "$properties": {
         "StreamingEnabled": true
+      },
+      "SalvageWorld": {
+        "$path": "assets/snapshot/Workspace/SalvageWorld.rbxm"
+      },
+      "SpawnLocation": {
+        "$path": "assets/snapshot/Workspace/SpawnLocation.rbxm"
+      },
+      "$attributes": {
+        "__Rojo_ConnectionUrl": "http://localhost:34872"
       }
     },
     "Lighting": {
       "$properties": {
         "Ambient": [
-          0,
-          0,
-          0
+          0.47058823529411764,
+          0.5098039215686274,
+          0.5686274509803921
+        ],
+        "OutdoorAmbient": [
+          0.5490196078431373,
+          0.5882352941176471,
+          0.6470588235294118
         ],
         "Brightness": 2,
-        "GlobalShadows": true
-      }
+        "GlobalShadows": true,
+        "ClockTime": 14
+      },
+      "$path": "assets/snapshot/Lighting"
     },
     "SoundService": {
       "$properties": {

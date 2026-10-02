@@ -3,7 +3,9 @@ local Sound=game:GetService("SoundService")
 local C=require(game.ReplicatedStorage.Shared.Config)
 local U={Icons=require(script.Parent.Icons),SFX=true}
 function U.New(class,props,parent)
- local x=Instance.new(class);for key,value in props or {} do x[key]=value end;x.Parent=parent;return x
+ local x=Instance.new(class);for key,value in props or {} do x[key]=value end
+ if x:IsA("GuiObject") and parent and parent:IsA("GuiObject") and not (props and props.ZIndex) then x.ZIndex=parent.ZIndex+1 end
+ x.Parent=parent;return x
 end
 function U.Sound(name)
  if not U.SFX then return end

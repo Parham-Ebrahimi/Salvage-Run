@@ -8,6 +8,8 @@ for _,name in {"Request","Snapshot","FX"} do local e=Instance.new("RemoteEvent")
 for key,name in {Data="DataService",Vehicle="VehicleService",Run="RunService",Debug="DebugService",Cargo="CargoService",Banking="BankingService",Collection="CollectionService",Collectible="CollectibleService"} do ctx[key]=require(script[name]) end
 for _,service in {ctx.Data,ctx.Vehicle,ctx.Run,ctx.Debug,ctx.Cargo,ctx.Collection,ctx.Banking,ctx.Collectible} do service.Init(ctx) end
 ctx.Enemy=require(script.EnemyService);ctx.Enemy.Init(ctx)
+ctx.Display=require(script.DisplayService);ctx.Display.Init(ctx)
+ctx.Economy=require(script.EconomyService);ctx.Economy.Init(ctx)
 local function joined(player)
  local plot=nil
  for _,p in workspace.SalvageWorld.Plots:GetChildren() do if p:GetAttribute("Owner")==0 then plot=p;p:SetAttribute("Owner",player.UserId);break end end
@@ -41,7 +43,7 @@ local function request(player,action,args)
  elseif action=="Boost" then ok=ctx.Vehicle.Boost(player,run,args.Held)
  elseif action=="Hop" then ok=ctx.Vehicle.Hop(player,run)
  elseif action=="Debug" then ok,reason=ctx.Debug.Execute(player,args.Command,args.Args)
- elseif action=="Ready" then ok=true
+ elseif action=="Ready" then ok=true;if ctx.Offline and ctx.Offline[player] then ctx.FX:FireClient(player,"Offline",{Cash=ctx.Offline[player]});ctx.Offline[player]=nil end
  elseif ctx.Economy and action=="Upgrade" then ok,reason=ctx.Economy.Upgrade(player,args.Track)
  elseif ctx.Economy and action=="TradeUp" then ok,reason=ctx.Economy.TradeUp(player)
  elseif ctx.Economy and action=="Pedestal" then ok,reason=ctx.Economy.BuyPedestal(player)

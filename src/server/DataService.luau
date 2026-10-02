@@ -3,7 +3,9 @@ local Http=game:GetService("HttpService")
 local Studio=game:GetService("RunService"):IsStudio()
 local C=require(game.ReplicatedStorage.Shared.Config)
 local D={Profiles={},Sessions={}}
-local store=DSS:GetDataStore(C.Data.Name..(Studio and "_Studio" or ""))
+local store=nil
+local storeOK,storeResult=pcall(function()return DSS:GetDataStore(C.Data.Name..(Studio and "_Studio" or ""))end)
+if storeOK then store=storeResult end
 local token=game.JobId..":"..Http:GenerateGUID(false)
 function D.Default()
  return {Version=C.Schema,Cash=0,OwnedVehicles={["1"]=true},CurrentVehicle=1,Upgrades={["1"]={Speed=0,HP=0,Cargo=0,Boost=0}},Collection={},Pedestals={},PedestalCount=C.Economy.PedestalStart,Index={},Settings={AutoScrap=false,Music=true,SFX=true},DeepestBanked=0,LastOnline=os.time(),HasBanked=false}
@@ -24,6 +26,10 @@ local function normalize(data)
  return data
 end
 function D.Load(player)
+ if not store then
+  if Studio then local data=D.Default();D.Profiles[player]=data;D.Sessions[player]={Scratch=true};warn("[SalvageRun] Unpublished Studio place: scratch session, saving unavailable");return data end
+  player:Kick("Your save could not be loaded. Please rejoin shortly.");return nil
+ end
  local key="player_"..player.UserId
  local loaded=nil;local err=nil;local apiFailure=false
  for attempt=1,C.Timing.LoadRetries do

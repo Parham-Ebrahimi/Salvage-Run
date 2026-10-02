@@ -6,3 +6,10 @@
 /*.rbxl.lock
 
 sourcemap.json
+/build-check.rbxlx
+/salvage-run-recovery.rbxl
+/tools/__pycache__/
+/tools/.bin/
+/tools/.deps/
+/tools/rojo-inspect/
+/tools/plugin-settings-backup.json

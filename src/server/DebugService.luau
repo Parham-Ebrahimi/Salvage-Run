@@ -55,6 +55,33 @@ function D.Execute(player,action,args,studioTest)
   run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero;run.LastPosition=pos;run.LastSample=os.clock();run.Vehicle:SetAttribute("ResetYaw",workspace:GetServerTimeNow());run.Deepest=3
   for _,mob in ctx.Enemy.Mobs do if mob.Stage==3 then mob.Position=pos+C.World.Lateral*10;mob.Home=mob.Position;break end end
   run.Unbanked=123;return {Started=os.clock(),Cargo=#run.Cargo,Unbanked=run.Unbanked}
+ elseif action=="RarityMath" and studioTest then
+  local rarity=require(script.Parent.RarityService);local values={}
+  for mutation=1,#C.Mutations do table.insert(values,{Mutation=C.Mutations[mutation].Name,Value=rarity.Value("microwave",mutation,4),Odds=rarity.Odds(mutation,4)}) end
+  return {GoldenColossal=rarity.Odds(3,4),GoldenValue=rarity.Value("microwave",3,4),Values=values}
+ elseif action=="OwnershipFixture" and studioTest then
+  local collection=ctx.Collection;local cash,results=0,{}
+  for _,item in {"tire","television","microwave","toaster"} do local earned,result,key=collection.Award(data,item,2,1);cash+=earned;table.insert(results,{Key=key,Result=result})end
+  data.Cash+=cash;return results
+ elseif action=="DuplicateMath" and studioTest then
+  local temp=ctx.Data.Default();local out={}
+  for _,size in {1,1,2,1,4} do local cash,result=ctx.Collection.Award(temp,"microwave",3,size);table.insert(out,{Size=size,Cash=cash,Result=result})end
+  return out
+ elseif action=="IncomeCheck" and studioTest then
+  return {Income=ctx.Collection.Income(data),Sign=ctx.Plots[player].Income.SurfaceGui.TextLabel.Text,Pedestals=data.Pedestals}
+ elseif action=="PlaceFixture" and studioTest then
+  ctx.Run.Home(player);local i=0
+  for key in data.Collection do i+=1;if i>4 then break end;ctx.Collection.Place(player,i,key)end
+  return {Income=ctx.Collection.Income(data),Sign=ctx.Plots[player].Income.SurfaceGui.TextLabel.Text,Pedestals=data.Pedestals}
+ elseif action=="UpgradeFixture" and studioTest then
+  local before=C.Stats(data.CurrentVehicle,data.Upgrades[tostring(data.CurrentVehicle)]);data.Cash+=10000
+  for _,track in C.Upgrades.Tracks do ctx.Economy.Upgrade(player,track)end
+  return {Before=before,After=C.Stats(data.CurrentVehicle,data.Upgrades[tostring(data.CurrentVehicle)]),Levels=data.Upgrades[tostring(data.CurrentVehicle)]}
+ elseif action=="TradeFixture" and studioTest and run.State=="BASE" then
+  local id=data.CurrentVehicle;data.Cash+=100000
+  for _,track in C.Upgrades.Tracks do while data.Upgrades[tostring(id)][track]<C.Upgrades.MaxLevel do local ok=ctx.Economy.Upgrade(player,track);if not ok then break end end end
+  local ok,reason=ctx.Economy.TradeUp(player);return {Traded=ok,Reason=reason,Current=data.CurrentVehicle,Owned=data.OwnedVehicles,Collection=data.Collection,Pedestals=data.Pedestals}
+ elseif action=="Save" and studioTest then return ctx.Data.Save(player,false)
  end
  return false,"Invalid debug command"
 end

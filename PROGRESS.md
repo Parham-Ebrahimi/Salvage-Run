@@ -43,8 +43,20 @@ SAVE POINT 3
 
 ## Phase 4 — danger and failure
 - Built shared 50-enemy system (five/stage), PATROL/CHASE/ATTACK/RETURN, proximity and pickup noise, stage leashes, red wind-up flashes, chaser/swarm/diver/sentry/hazard-maker behaviors, visible bolts/puddles, 40 themed hazards, HP damage, stacked armor/hover/crush, smoke/low-HP pulse/siren, failure burst and camera hold.
-- PASS: Skateboard carrying 6 items plus $123 unbanked was moved to Stage 3 near a Chaser. Failed within the 20-second bound (total run 14.80 seconds, including pickup fixture); HAUL LOST captured; after respawn Cargo=0, unbanked=0, state BASE, permanent Cash remained $415. Server inspection found exactly 50 mobs and zero outside their own stage. No game console errors.
+- PASS: Skateboard carrying 6 items plus $123 unbanked was moved to Stage 3 near a Chaser. Failed within the 20-second bound (total run 14.80 seconds, including pickup fixture); HAUL LOST captured and permanent Cash display remained $415. No game console errors in that capture.
+- UNVERIFIED: post-respawn Cargo/unbanked/state and live 50-mob leash audit. Studio disconnected before those follow-up calls could execute; queued calls returned studio-not-connected. Reconnect and verify before claiming these checks pass.
 - PARTIAL: all five telegraphs and effect looks cannot be visually accepted while 3D capture is blank. Diver travel and oil/rift feel will be reviewed in critique. Defaults and hazard colors are distinct by inspection.
 - Replaced an unrelated android/anime search candidate with a genuine audited robot, tinted later for lab use. All AI/animation code from Toolbox stripped.
 
 SAVE POINT 4
+## Phase 5 — rarity, reveal cards and discovery
+
+- Added rotating mutation reveal cards with exact odds, an Item Index grouped by ten stages, silhouettes, mutation pips and completion percentages. All managed source remains in `src/` and was delivered through Rojo.
+- Recovered the current autosave after Studio disconnected. The reopened renderer displays 3D correctly. Exported the current map and all 113 audited model templates into `assets/snapshot/`; `rojo build` now produces a complete place, rather than a script-only scaffold.
+- PASS: Studio debug force-spawned all eight Microwave mutations. The field lineup shows gray, silver, gold, cyan, crystal blue, blue flame, flickering magenta and dark purple treatments. Particle motion is present; Glitched jitter and Blue Flame rotation need polish.
+- PASS: live RarityMath reports Golden Colossal odds 50,000 and value $6,000. All eight Colossal value/mutation combinations were inspected. Fractional reciprocal odds are rounded only for display.
+- PASS: desktop captures `phase5-index-desktop`, `phase5-golden-colossal-reveal` show the Index and rotating card with its 1 in 50,000 label and buttons. Mouse close was exercised. Phone verification is scheduled for Phase 8.
+- Console: server and client ready, no runtime error. The warning explicitly reports scratch saves for the unpublished local recovery file. Persistence is UNVERIFIED in this file.
+- Current recovery also confirms the visible base and stage strip; the earlier black captures were a Studio rendering problem, not proof of visual acceptance.
+
+SAVE POINT 5
