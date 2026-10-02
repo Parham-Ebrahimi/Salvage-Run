@@ -35,12 +35,15 @@ function V.Init()
   local turn=C.Physics.TurnRate*(1-fraction*(1-C.Physics.FastTurnFraction))
   -- Direct turning at low speeds, reversing follows the expected steering direction.
   V.Yaw-=steer*turn*dt*(V.Speed<-.5 and -1 or 1)
+  if m:GetAttribute("Oil") then V.Yaw+=math.sin(now*4)*C.Physics.OilSpin*dt end
   local rotation=CFrame.Angles(0,V.Yaw,0)
   root.Upright.CFrame=rotation
   local desired=rotation.LookVector*V.Speed
   local current=root.AssemblyLinearVelocity;local horizontal=Vector3.new(current.X,0,current.Z)
   local grip=C.Physics.Grip*(m:GetAttribute("Grip") or 1)
   local velocity=horizontal:Lerp(desired,1-math.exp(-grip*dt))
+  local rift=m:GetAttribute("RiftCenter")
+  if rift then local delta=rift-root.Position;if delta.Magnitude>0 and delta.Magnitude<C.Hazards.RiftRadius then velocity+=Vector3.new(delta.X,0,delta.Z).Unit*C.Hazards.RiftPull*dt end end
   local y=current.Y
   local hop=m:GetAttribute("HopAt")
   if hop>V.LastHop then V.LastHop=hop;y=math.sqrt(2*workspace.Gravity*C.Physics.HopHeight) end

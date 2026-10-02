@@ -40,3 +40,11 @@ SAVE POINT 2
 - Exact listed search terms tried first; alias searches used for centrifuge/debris and sci-fi items. Each inserted model scanned immediately. All import scripts removed; the full audit will be regenerated before final delivery.
 
 SAVE POINT 3
+
+## Phase 4 — danger and failure
+- Built shared 50-enemy system (five/stage), PATROL/CHASE/ATTACK/RETURN, proximity and pickup noise, stage leashes, red wind-up flashes, chaser/swarm/diver/sentry/hazard-maker behaviors, visible bolts/puddles, 40 themed hazards, HP damage, stacked armor/hover/crush, smoke/low-HP pulse/siren, failure burst and camera hold.
+- PASS: Skateboard carrying 6 items plus $123 unbanked was moved to Stage 3 near a Chaser. Failed within the 20-second bound (total run 14.80 seconds, including pickup fixture); HAUL LOST captured; after respawn Cargo=0, unbanked=0, state BASE, permanent Cash remained $415. Server inspection found exactly 50 mobs and zero outside their own stage. No game console errors.
+- PARTIAL: all five telegraphs and effect looks cannot be visually accepted while 3D capture is blank. Diver travel and oil/rift feel will be reviewed in critique. Defaults and hazard colors are distinct by inspection.
+- Replaced an unrelated android/anime search candidate with a genuine audited robot, tinted later for lab use. All AI/animation code from Toolbox stripped.
+
+SAVE POINT 4

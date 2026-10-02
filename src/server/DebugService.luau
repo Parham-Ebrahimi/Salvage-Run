@@ -50,6 +50,11 @@ function D.Execute(player,action,args,studioTest)
   return {Expected=total,Actual=data.Cash}
  elseif action=="RepositionHome" and studioTest and run.State=="RUNNING" then
   local pos=Stage.Position(1,0,C.World.SpawnDistance,C.Physics.Clearance);run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero;run.LastPosition=pos;run.LastSample=os.clock();run.Vehicle:SetAttribute("ResetYaw",workspace:GetServerTimeNow());return true
+ elseif action=="DangerFixture" and studioTest and run.State=="RUNNING" then
+  local pos=Stage.Position(3,0,C.Enemies.HomeStart,C.Physics.Clearance)
+  run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero;run.LastPosition=pos;run.LastSample=os.clock();run.Vehicle:SetAttribute("ResetYaw",workspace:GetServerTimeNow());run.Deepest=3
+  for _,mob in ctx.Enemy.Mobs do if mob.Stage==3 then mob.Position=pos+C.World.Lateral*10;mob.Home=mob.Position;break end end
+  run.Unbanked=123;return {Started=os.clock(),Cargo=#run.Cargo,Unbanked=run.Unbanked}
  end
  return false,"Invalid debug command"
 end

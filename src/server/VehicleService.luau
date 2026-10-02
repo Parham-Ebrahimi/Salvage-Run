@@ -90,7 +90,7 @@ function V.Validate(player,run,dt)
  if run.Id>=3 then
   if run.BoostHeld and run.Battery>0 then
    run.Battery=math.max(0,run.Battery-dt);run.Vehicle:SetAttribute("BoostUntil",now+dt*2)
-   if run.Id>=10 and not run.WasBoosting then run.Vehicle:SetAttribute("PhaseUntil",now+C.Physics.PhaseDuration) end
+   if run.Id>=10 and not run.WasBoosting and now>=(run.PhaseReady or 0) then run.Vehicle:SetAttribute("PhaseUntil",now+C.Physics.PhaseDuration);run.PhaseReady=now+run.Stats.BoostCooldown end
   else run.Battery=math.min(C.Physics.BatteryCapacity,run.Battery+C.Physics.BatteryRefill*dt) end
   run.WasBoosting=run.BoostHeld and run.Battery>0
  end
