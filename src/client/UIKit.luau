@@ -63,7 +63,7 @@ function U.Item(parent,itemId,mutation,size,pos)
  if not asset then return frame end
  local model=asset:Clone();model.Parent=frame
  local _,bounds=model:GetBoundingBox();local distance=math.max(bounds.X,bounds.Y,bounds.Z)*1.8
- local camera=U.New("Camera",{CFrame=CFrame.lookAt(Vector3.new(distance*.7,distance*.5,distance),Vector3.zero()),FieldOfView=40},frame);frame.CurrentCamera=camera
+ local camera=U.New("Camera",{CFrame=CFrame.lookAt(Vector3.new(distance*.7,distance*.5,distance),Vector3.zero),FieldOfView=40},frame);frame.CurrentCamera=camera
  if mutation and mutation>1 then
   for _,p in model:GetDescendants() do if p:IsA("BasePart") then p.Color=C.Mutations[mutation].Color;p.Material=mutation==2 and Enum.Material.Metal or mutation==5 and Enum.Material.Glass or Enum.Material.Neon end end
  end

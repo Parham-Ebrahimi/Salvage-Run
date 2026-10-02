@@ -35,7 +35,7 @@ function V.Spawn(player,run,id,data)
  if template then
   local shell=template:Clone();shell.Name="Shell";shell.Parent=m
   local _,size=shell:GetBoundingBox();shell:ScaleTo(C.Physics.ShellMaxSize/math.max(size.X,size.Y,size.Z))
-  shell:PivotTo(root.CFrame)
+  local _,scaled=shell:GetBoundingBox();shell:PivotTo(root.CFrame*CFrame.new(0,math.max(0,(scaled.Y-C.Physics.ChassisSize.Y)/2),0))
   for _,p in shell:GetDescendants() do if p:IsA("BasePart") then weld(root,p) end end
  else root.Transparency=0;root.Color=C.UI.Blue end
  local seat=Instance.new("VehicleSeat");seat.Name="DriverSeat";seat.Size=Vector3.new(2,1,2);seat.CFrame=root.CFrame*CFrame.new(0,1,0);seat.Transparency=1;seat.MaxSpeed=stats.Speed;seat.Torque=0;seat.TurnSpeed=0;seat.HeadsUpDisplay=false;seat.Parent=m;weld(root,seat)

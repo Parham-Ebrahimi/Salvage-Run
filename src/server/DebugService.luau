@@ -41,6 +41,15 @@ function D.Execute(player,action,args,studioTest)
   local pos=run.Vehicle and run.Vehicle.PrimaryPart.Position+C.World.Forward*8 or Stage.Position(C.ItemsById[args.Item].Stage,0,30,0)
   ctx.Collectible.Spawn(C.ItemsById[args.Item].Stage,args.Item,args.Mutation,pos);return true
  elseif action=="Reset" and run.State=="BASE" then ctx.Data.Profiles[player]=ctx.Data.Default();if ctx.Display then ctx.Display.Refresh(player) end;return true
+ elseif action=="PickupFixture" and studioTest and run.State=="RUNNING" then
+  for id,record in ctx.Collectible.Records do if record.Stage==1 then record.Model:Destroy();ctx.Collectible.Records[id]=nil end end
+  for _,item in C.Items do if item.Stage==1 then ctx.Collectible.Spawn(1,item.Id,1,run.LastPosition+C.World.Lateral*(table.find(C.Items,item)%3-1)*2,true) end end
+  return true
+ elseif action=="CashMath" and studioTest then
+  local total=0;for _,entry in data.Collection do if entry.Mutation==1 then total+=require(script.Parent.RarityService).Value(entry.Item,entry.Mutation,entry.Size) end end
+  return {Expected=total,Actual=data.Cash}
+ elseif action=="RepositionHome" and studioTest and run.State=="RUNNING" then
+  local pos=Stage.Position(1,0,C.World.SpawnDistance,C.Physics.Clearance);run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero;run.LastPosition=pos;run.LastSample=os.clock();run.Vehicle:SetAttribute("ResetYaw",workspace:GetServerTimeNow());return true
  end
  return false,"Invalid debug command"
 end

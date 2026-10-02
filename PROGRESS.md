@@ -30,3 +30,13 @@ SAVE POINT 1
 - Studio-only test bridge uses attributes because MCP cannot invoke privileged server Bindable callbacks. It is not a client remote and exists only on the server. Owner UI debug requests remain separately authorized.
 
 SAVE POINT 2
+
+## Phase 3 — collection field, Cargo, banking
+- Built all 60 item configurations and templates, target density 12/stage, timed pickups with decay, local radius ring and progress feedback, lift/spin/arc/shrink FX, icon flight, strict slot limit, auto-scrap, server inward banking and Cargo clearing. Added reusable mutation visuals and reward math now because collectible spawn/banking depends on them.
+- PASS: Play started with 120 loot models. Controlled Stage 1 fixture collected six unique plain items; Cargo showed FULL 6/6 and no extra pickup. Real S input drove inward across the line and logged a six-item bank of $415. Cash math from the six registered sizes matched $415 exactly; state returned BASE and vehicle despawned. No game console errors after fixes.
+- Fixed Vector3.zero mistakenly called as a function in icon camera. Fixed Safe Line collider preventing returns; updated world source and Edit place. Shells now rest above ground rather than centering large bodies through it.
+- PARTIAL: auto-scrap saved option exists in server protocol; Settings interaction and death loss checks follow. 3D world and model icons still capture blank; 2D state and Cash are visible.
+- MISSING FROM TOOLBOX: Engine Block (both >300 parts), Crucible (unrelated weapon/buildings), Quantum Drive (unrelated cars), Reactor Rod (unrelated assemblies), Alien Power Cell (unrelated monsters), Impossible Ring (unrelated objects). Each has a clean colored multi-part silhouette in tools/build-fallback-items.luau. Spaceship wreck remains the earlier fallback. Saucer Fragment uses the audited Roblox UFO hull; unrelated fallback search result replaced.
+- Exact listed search terms tried first; alias searches used for centrifuge/debris and sci-fi items. Each inserted model scanned immediately. All import scripts removed; the full audit will be regenerated before final delivery.
+
+SAVE POINT 3

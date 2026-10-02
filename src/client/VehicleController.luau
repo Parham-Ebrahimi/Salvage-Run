@@ -9,7 +9,7 @@ function V.Set(snapshot)
  if m~=V.Vehicle then
   V.Vehicle=m;V.Speed=0;V.LastHop=0;V.Flipped=0;V.Cam=nil
   if m and m.PrimaryPart then local _,yaw=m.PrimaryPart.CFrame:ToOrientation();V.Yaw=yaw
-  else local camera=workspace.CurrentCamera;camera.CameraType=Enum.CameraType.Custom;local char=Players.LocalPlayer.Character;if char then camera.CameraSubject=char:FindFirstChildOfClass("Humanoid") end end
+  elseif os.clock()>(V.HoldUntil or 0) then local camera=workspace.CurrentCamera;camera.CameraType=Enum.CameraType.Custom;local char=Players.LocalPlayer.Character;if char then camera.CameraSubject=char:FindFirstChildOfClass("Humanoid") end end
  end
 end
 function V.Init()
@@ -24,6 +24,8 @@ function V.Init()
   local root=m.PrimaryPart;local seat=m:FindFirstChild("DriverSeat");if not seat or not seat.Occupant then return end
   dt=math.min(dt,C.Timing.ServerTick)
   local now=workspace:GetServerTimeNow();local max=m:GetAttribute("Speed")*(now<m:GetAttribute("BoostUntil") and C.Physics.BoostSpeed or 1)*(m:GetAttribute("Slow") or 1)
+  local reset=m:GetAttribute("ResetYaw") or 0
+  if reset>(V.ResetAt or 0) then V.ResetAt=reset;local _,yaw=root.CFrame:ToOrientation();V.Yaw=yaw;V.Speed=0 end
   local throttle=seat.ThrottleFloat;local steer=seat.SteerFloat
   local target=throttle>=0 and throttle*max or throttle*max*C.Physics.ReverseFraction
   local brake=throttle*V.Speed<0 or throttle==0
@@ -50,7 +52,11 @@ function V.Init()
   else V.Flipped=0 end
  end)
  Run:BindToRenderStep("SalvageFollow",Enum.RenderPriority.Camera.Value+1,function(dt)
-  local m=V.Vehicle;if not m or not m.Parent or not m.PrimaryPart then return end
+  local m=V.Vehicle
+  if not m or not m.Parent or not m.PrimaryPart then
+   if V.HoldUntil and os.clock()>V.HoldUntil then V.HoldUntil=nil;workspace.CurrentCamera.CameraType=Enum.CameraType.Custom;local char=Players.LocalPlayer.Character;if char then workspace.CurrentCamera.CameraSubject=char:FindFirstChildOfClass("Humanoid") end end
+   return
+  end
   local root=m.PrimaryPart;local camera=workspace.CurrentCamera;camera.CameraType=Enum.CameraType.Scriptable;camera.FieldOfView=C.Physics.CameraFov
   local forward=CFrame.Angles(0,V.Yaw,0).LookVector
   local pos=root.Position-forward*C.Physics.CameraDistance+Vector3.new(0,C.Physics.CameraHeight,0)

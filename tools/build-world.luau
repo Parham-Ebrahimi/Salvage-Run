@@ -15,7 +15,7 @@ local W=C.World
 part("BaseGround",Vector3.new(W.BaseWidth,W.GroundThickness,W.BaseDepth),Vector3.new(0,-W.GroundThickness/2,W.BaseDepth/2),Color3.fromRGB(195,204,205),Enum.Material.Concrete)
 local bay=part("VehicleBay",Vector3.new(W.Width*W.BayWidthFraction,.16,W.BayDepth),Vector3.new(0,.08,W.BayZ),Color3.fromRGB(51,96,133),Enum.Material.Asphalt)
 for x=-3,3 do part("BayMark",Vector3.new(.3,.04,W.BayDepth-4),Vector3.new(x*18,.18,W.BayZ),C.UI.Paper) end
-part("SafeLine",Vector3.new(W.Width,.2,2),Vector3.new(0,.15,W.SafeLine),C.UI.Green,Enum.Material.Neon)
+local safe=part("SafeLine",Vector3.new(W.Width,.2,2),Vector3.new(0,.15,W.SafeLine),C.UI.Green,Enum.Material.Neon);safe.CanCollide=false;safe.CanTouch=false
 local plots=Instance.new("Folder");plots.Name="Plots";plots.Parent=world
 for i=1,W.PlotCount do
  local f=Instance.new("Model");f.Name=tostring(i);f:SetAttribute("Owner",0);f.Parent=plots

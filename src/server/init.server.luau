@@ -5,8 +5,8 @@ local C=require(RS.Shared.Config)
 local ctx={Runs={},Plots={}}
 local net=Instance.new("Folder");net.Name="SalvageNet";net.Parent=RS
 for _,name in {"Request","Snapshot","FX"} do local e=Instance.new("RemoteEvent");e.Name=name;e.Parent=net;ctx[name]=e end
-for key,name in {Data="DataService",Vehicle="VehicleService",Run="RunService",Debug="DebugService"} do ctx[key]=require(script[name]) end
-for _,service in {ctx.Data,ctx.Vehicle,ctx.Run,ctx.Debug} do service.Init(ctx) end
+for key,name in {Data="DataService",Vehicle="VehicleService",Run="RunService",Debug="DebugService",Cargo="CargoService",Banking="BankingService",Collection="CollectionService",Collectible="CollectibleService"} do ctx[key]=require(script[name]) end
+for _,service in {ctx.Data,ctx.Vehicle,ctx.Run,ctx.Debug,ctx.Cargo,ctx.Collection,ctx.Banking,ctx.Collectible} do service.Init(ctx) end
 local function joined(player)
  local plot=nil
  for _,p in workspace.SalvageWorld.Plots:GetChildren() do if p:GetAttribute("Owner")==0 then plot=p;p:SetAttribute("Owner",player.UserId);break end end
