@@ -18,6 +18,11 @@ C.Enemies = { PerStage=5, Aggro=30, Leash=8, AttackRange=7, Windup=.65, Cooldown
 C.Hazards = { Count=4, Width=18, Length=16, SlowFraction=.55, OilGrip=.35, DamageInterval=1, DamageFraction=.65, LaserPeriod=5, LaserOn=2.5, RiftPull=13, RiftRadius=22, WaterWidth=10, FallY=-8 }
 C.Timing = { ServerTick=.1, Snapshot=.25, RemoteWindow=1, RemoteLimit=12, ActionCooldown=.15, FailureHold=2, DataSave=60, SessionLease=180, LoadRetries=4, RetryDelay=2, LockWait=6, ShutdownDeadline=25, AnnouncementSeconds=6, TipSeconds=12 }
 C.Data = { Name="SalvageRun_v1", SaveRetries=3 }
+C.Physics.ChassisDensity=2
+C.Physics.ChassisFriction=0
+C.Physics.ChassisFrictionWeight=100
+C.Physics.PlayerJumpPower=50
+C.Physics.PlayerJumpHeight=7.2
 C.UI = { Font=Enum.Font.FredokaOne, TitleFont=Enum.Font.LuckiestGuy, Stroke=2.5, Corner=16, Shadow=4, Hover=1.05, Press=.92, Bounce=.12, Open=.25, Toast=3.5, MinimumTap=44, BaseViewport=Vector2.new(1280,720), Panel=Vector2.new(660,520), CargoSlot=48, CargoGap=5, Gold=Color3.fromRGB(255,204,58), Green=Color3.fromRGB(87,214,91), Blue=Color3.fromRGB(54,159,241), Red=Color3.fromRGB(238,76,92), Purple=Color3.fromRGB(163,94,241), Dark=Color3.fromRGB(24,32,53), Paper=Color3.fromRGB(241,248,255), Gray=Color3.fromRGB(159,167,185), WarningHP=.15, SmokeHP=.3, RevealsPerPage=1, FloatSeconds=.8, RotateSpeed=.45, StageFog=400, StageAtmosphere=.22 }
 C.Sounds = { Click="rbxasset://sounds/electronicpingshort.wav", Pickup="rbxasset://sounds/electronicpingshort.wav", Bank="rbxasset://sounds/victory.wav", Fail="rbxasset://sounds/impact_water.mp3", Thump="rbxasset://sounds/impact_generic.mp3", Siren="rbxasset://sounds/uuhhh.mp3", Volume=.35 }
 C.Mutations = {
