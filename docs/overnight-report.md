@@ -4,6 +4,15 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T2: narrowed visible slab/volume check replaces broad pass criterion. Initial
+  three separated overlay pairs cleared; Studio reports zero floor pairs and
+  zero plot-border pairs, eight borders at0.54, structural inventory PASS.
+  Bay top0.16→0.30; SafeLine top0.25→0.30; seven Bay marks follow Bay.
+  Assumption/deviation: raised overlays to preserve supporting floor heights;
+  suggested lowering would embed the overlays or move the playable floors.
+  Sizes, XZ positions and collider settings preserved. Historical broad list
+  retained. SAVE POINT recorded; owner should visually inspect on return.
+
 - T1 acceptance: actual W-driven crossings at Stage1 Z=-26.18, Stage5
   Z=-1412.55, Stage10 Z=-3217.42 (X=10 to avoid existing cosmetic grid).
   Stage entry remains functional. Fixed stage-0 client Fog lookup; subsequent

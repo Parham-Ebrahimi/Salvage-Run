@@ -210,6 +210,10 @@ STOP: tell the user to save/publish the verified current place to Roblox. Wait f
 - STOP ON ERROR / SAVE POINT: report the failed and fully rolled-back wall batch. Ask the user to save/publish the successfully restored overlap repair. Requested wall enlargement and stud-wall styling are NOT DONE; await further instruction before retrying. No Play control taken.
 # Overnight 2026-10-02 — protected builder verification
 
+T2 verified in Studio: structural inventory passes, narrowed floor/volume
+pairs zero, plot-border pairs zero, eight borders at0.54. Bay/SafeLine overlay
+tops now0.30; ground floor heights unchanged. Replay and rationale documented.
+
 T1 world batch verified in Studio: ten Arch models removed, fifty Parts and
 ten SurfaceGuis archived; no entrance/name signs remain. Structural inventory
 and zero plot-border pairs passed. Stage 1/5/10 driving test still pending.

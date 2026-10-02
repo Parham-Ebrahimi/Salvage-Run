@@ -1,5 +1,21 @@
 # Read-only top overlap audit — 2026-10-02
 
+## Overnight narrowed gate
+
+The old 2,773 candidates remain historical reference. T2 scans visible level
+block Parts with both top-face dimensions >8, plus the explicitly requested
+thin SafeLine. It reports positive-area footprint overlap when top gap <0.3
+or slab volumes intersect. No internal prop candidates passed this filter.
+Initial narrowed findings: BaseGround/Bay gap0.16, BaseGround/SafeLine gap0.25,
+Stage1/SafeLine gap0.25; all three were separated volumes, intentional overlays.
+
+Unattended interpretation: preserve the supporting floor positions, collider
+settings and XZ alignment. Lift Bay/its seven marks by0.14 and SafeLine by0.05
+so both overlay tops reach0.30. This uses raising rather than the work order's
+suggested lowering; lowering these overlays would embed them in the ground,
+and lowering ground would move the playable floor. No duplicate floor existed.
+The exact replay is tools/separate-floor-overlays.luau with Config lifts.
+
 Place 120476079479285, Studio Edit. This full inventory records the read-only scan **before** the subsequently approved border repair. The CSV/JSON files preserve that pre-repair evidence; see the current repair result below.
 
 Checked 2211 Workspace BaseParts (including Part subclasses and MeshParts, excluding Terrain). 1349 distinct parts form 2789 pairs within 0.05 studs in world bounding-box top height and with positive-area XZ box-footprint overlap. Edge-only contact is excluded. Rotated/curved/mesh geometry is flagged as a conservative box candidate, not proof of visible coplanarity. Invisible parts are included and marked. These candidates include internal prop pieces and intentional overlays.

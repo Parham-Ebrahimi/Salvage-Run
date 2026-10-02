@@ -42,10 +42,10 @@ local function intersects(a,b)
 	return true
 end
 local function vector(v) return {v.X,v.Y,v.Z} end
-function O.Scan(root)
+function O.Scan(root,include)
 	local entries={}
 	for _,p in root:GetDescendants() do
-		if p:IsA("BasePart") and not p:IsA("Terrain") then
+		if p:IsA("BasePart") and not p:IsA("Terrain") and (not include or include(p)) then
 			local points,top,minX,maxX,minZ,maxZ={},-math.huge,math.huge,-math.huge,math.huge,-math.huge
 			for _,x in {-1,1} do for _,y in {-1,1} do for _,z in {-1,1} do
 				local v=p.CFrame:PointToWorldSpace(p.Size*Vector3.new(x,y,z)/2)
@@ -78,5 +78,35 @@ function O.Scan(root)
 		table.insert(parts,{Id=id,Name=entry.Path,Class=p.ClassName,Position=vector(p.Position),Size=vector(p.Size),Orientation=vector(p.Orientation),Top=entry.Top,Material=tostring(p.Material),MaterialVariant=p.MaterialVariant,NewStudVariant=p.MaterialVariant=="SalvageStud",Visible=p.Transparency<1,ExactBlockFootprint=entry.Exact})
 	end end
 	return {Tolerance=O.Tolerance,ScannedParts=#entries,MatchingParts=#parts,PairCount=#pairs,Parts=parts,Pairs=pairs,Method="World box top + convex XZ footprint; edge-only contact excluded. Non-level/non-block shapes are conservative candidates."}
+end
+-- Narrowed T2 criterion. Thin named SafeLine is included explicitly even
+-- though its Z face is <8; bay/base/plots and any other wide block are scanned.
+function O.ScanFloors(root)
+ local entries={}
+ for _,p in root:GetDescendants() do
+  if p:IsA("Part") and p.Shape==Enum.PartType.Block and p.Transparency<1 and math.abs(p.CFrame.UpVector.Y)>.99999 then
+   local wide=p.Size.X>8 and p.Size.Z>8
+   if wide or p.Name=="SafeLine" then
+    local pts,top,bottom={},-math.huge,math.huge
+    for _,x in {-1,1} do for _,y in {-1,1} do for _,z in {-1,1} do
+     local v=p.CFrame:PointToWorldSpace(p.Size*Vector3.new(x,y,z)/2)
+     table.insert(pts,{X=v.X,Z=v.Z});top=math.max(top,v.Y);bottom=math.min(bottom,v.Y)
+    end end end
+    table.insert(entries,{Part=p,Polygon=hull(pts),Top=top,Bottom=bottom})
+   end
+  end
+ end
+ local pairs={}
+ for i,a in entries do for j=i+1,#entries do local b=entries[j]
+  if intersects(a.Polygon,b.Polygon) then
+   local gap=math.abs(a.Top-b.Top)
+   local volume=math.min(a.Top,b.Top)-math.max(a.Bottom,b.Bottom)>1e-5
+   if gap<.3-1e-6 or volume then
+    table.insert(pairs,{A=a.Part:GetFullName(),B=b.Part:GetFullName(),TopDifference=gap,VolumesOverlap=volume,
+     APosition=vector(a.Part.Position),ASize=vector(a.Part.Size),BPosition=vector(b.Part.Position),BSize=vector(b.Part.Size)})
+   end
+  end
+ end end
+ return {Passed=#pairs==0,PairCount=#pairs,ScannedParts=#entries,Pairs=pairs,TopGap=.3,Method="Visible level block slabs >8x8; SafeLine explicitly included; positive footprint area; close tops or intersecting volumes"}
 end
 return O
