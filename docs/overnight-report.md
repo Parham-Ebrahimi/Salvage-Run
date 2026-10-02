@@ -4,6 +4,17 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T4 real rejoin PASS: stopped first session, >10 seconds elapsed while doing
+  source work, joined again; both had one player, BASE, Scratch=false and
+  original current vehicle2. No kick or refused load. Output acquired owner
+  :ef0e8243-0643-433e-a9a9-32d5dbab4675 age0s, then released; next acquired
+  :5b222d0b-a2b4-486c-a249-79ec92b8074d age0s, then released. Namespace
+  SalvageRun_v1_Studio; production180s/60s unchanged, Studio reclaim10s/renew5s.
+  All10 mocked lock tests pass, including refused owner/age logging, Release
+  and BindToClose. Studio-only acquired/released diagnostics added.
+- T4 UI-reference README covers all8 inspected PNGs. Public-kit license review
+  is in owner-todo. Commits through90a8949 pushed successfully.
+
 - T3 driving PASS: Hover Bike, actual W, angles0/30/60; max speeds100.34/
   103.82/103.94; maxX74.535/73.974/74.625 (inside inner face78), maxY2.21
   (wall top48). No clipping/launch. Initial fixture hit a prop before reaching

@@ -68,7 +68,7 @@ function D.Load(player)
   -- Studio-only scratch sessions never write over persistent records on API failure.
   if Studio and apiFailure then loaded=D.Default();D.Sessions[player]={Scratch=true};warn("[SalvageRun] DataStore unavailable: Studio scratch session; persistence UNVERIFIED: "..tostring(err))
   else player:Kick("Your save is still open in another server or could not load. Please rejoin shortly.");return nil end
- else D.Sessions[player]={Key=key,Scratch=false,LastSave=os.clock()} end
+ else D.Sessions[player]={Key=key,Scratch=false,LastSave=os.clock()};if Studio then print(string.format("[SalvageRun] Studio lock acquired: user=%d owner=%s age=0s store=%s",player.UserId,token,C.Data.Name.."_Studio")) end end
  D.Profiles[player]=loaded
  return loaded
 end
@@ -96,6 +96,7 @@ function D.Save(player,release)
   task.wait(C.Timing.RetryDelay)
  end
  session.Saving=false
+ if Studio and saved and release then print(string.format("[SalvageRun] Studio lock released: user=%d owner=%s",player.UserId,token)) end
  if not saved then warn("[SalvageRun] Save failed for "..player.UserId) end
  return saved
 end
