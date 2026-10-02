@@ -62,9 +62,9 @@ The salvage strip runs forward from the Safe Line. **Each stage is ~350 studs lo
 
 | # | Stage | Ground / atmosphere | Props (Toolbox) | Hazard | Mobs (Toolbox) | Stage value mult | Mob hit damage |
 |---|---|---|---|---|---|---|---|
-| 1 | Scrap Lot | gray Asphalt, light gray fog | [junk pile, scrap pile, tire stack, chain link fence] | oil slicks (spin-out) | [rat] small, fast | 1 | 10 |
-| 2 | Appliance Graveyard | tan Ground/Sand | [old fridge, washing machine, broken tv] stacks | Mud patches (slow) | [dog, wolf] | 5 | 19 |
-| 3 | Industrial Yard | safety-orange Concrete, hazard stripes | [crane, shipping container, oil barrel] | sparking cables | [security drone, drone] | 25 | 36 |
+| 1 | Grassland | green Grass, light natural fog | [grass tuft, small rock, tree stump, wildflower] | shallow Mud patches (slow) | [wild boar, boar] | 1 | 10 |
+| 2 | Scrap Yard | gray Asphalt, light gray fog | [junk pile, scrap pile, tire stack, chain link fence] | oil slicks (spin-out) | [rat] small, fast | 5 | 19 |
+| 3 | Appliance Graveyard | tan Ground/Sand | [old fridge, washing machine, broken tv] stacks | Mud patches (slow) | [dog, wolf] | 25 | 36 |
 | 4 | Shipping Docks | teal metal plate, sea fog, Water edges | [cargo container, dock crane, anchor] | water edge (fall = damage) | [crab] | 120 | 69 |
 | 5 | Foundry | rust-red Basalt | [furnace, factory machine, smokestack] | CrackedLava pools (damage) | [lava golem, rock golem, fire monster] | 600 | 130 |
 | 6 | Restricted Zone | olive Grass + Mud | [barbed wire, military tent, sandbags, watchtower] | Mud belts | [robot soldier, sentry turret, robot] | 3,000 | 248 |
@@ -148,6 +148,26 @@ One shared EnemyService drives every mob (Toolbox models provide visuals and ani
 
 Cash (top left), Cargo row + unbanked Cash counter (bottom center, during runs), vehicle HP bar (during runs), Boost button (mobile, during runs) and ability button where relevant, START button (in Vehicle Bay only), Garage, Item Index, Inventory, Settings (auto-scrap, music/sfx). A one-time tip "Drive out, collect, come back" that disappears after the first bank. Nothing else permanently on screen. Must be readable on a phone.
 
+## 12b. UI style: match top Roblox simulators
+
+The UI must look and feel like the UI in Steal An Egg and Kick a Lucky Block: chunky, bright, cartoony, bouncy, readable on a phone. **Before building any UI, open every image in `docs/ui-reference/`** (screenshots of those games' menus, HUD and popups) and write a short list in `PROGRESS.md` of the patterns you see. Match their layout density, proportions, colors, motion and feel. **Do not copy their artwork, logos, icons or text**; build our own in the same style.
+
+**UI kit selection**: `assets/ui-kits/` may contain one or more downloaded UI kits, each in its own subfolder as downloaded. If it has any contents: open every subfolder, compare each kit's buttons/panels/icons against `docs/ui-reference/` and the style rules below, pick the single best match, and write one line in `PROGRESS.md` naming the chosen kit and why. Use only that kit everywhere in the game; do not mix pieces from different kits. If a Toolbox search for "simulator UI kit" or "game UI pack" turns up a Roblox-native kit that fits better, that counts as a candidate too. If `assets/ui-kits/` is empty or nothing fits, build UI from scratch per the rules below.
+
+Build all UI from one shared `UIKit` module (`src/client/UIKit.luau`) so every button and panel looks consistent:
+
+- **Fonts**: `Enum.Font.FredokaOne` for buttons and body text; `Enum.Font.LuckiestGuy` for titles, big numbers and reveal cards. Button labels in ALL CAPS.
+- **Text**: white with a black `UIStroke` (thickness ~2-3, scaled for screen size). Numbers formatted 1.2K / 3.4M / 5.6B.
+- **Buttons**: `UICorner` (heavily rounded), a vertical `UIGradient` (lighter at the top), a thick dark `UIStroke` outline, and a darker copy of the button offset ~4 px underneath for a 3D "pressable" look. Hover: scale to 1.05. Press: scale to 0.92 and back with a Back easing over ~0.12 s, plus a click sound.
+- **Color meaning, used consistently**: green = buy/confirm/START, yellow-gold = Cash, blue = info/menus, red = close/danger, purple = rare/special. Rarity colors: Normal gray, Chrome silver, Golden gold, Electrified cyan, Crystal ice blue, Blue Flame deep blue, Glitched magenta, Void dark purple.
+- **Panels**: rounded, thick outline, a colored header bar with the title, a round red X close button at the top right. Open with a scale pop (0.8 to 1.0, Back.Out, ~0.25 s) over a dim translucent backdrop; close with a quick shrink.
+- **Layout**: Cash display top-left, large, with a coin icon; "+$X" text that floats up and fades whenever Cash is gained. Menu buttons (Garage, Item Index, Inventory, Settings) as big square icon buttons stacked vertically on the left edge. Toast notifications slide in at top-center. Run HUD (Cargo row, HP bar) bottom-center.
+- **Icons**: use image icons, not plain text. Use the chosen UI kit's icons first if it has one that fits; otherwise find icon decals in the Toolbox, or use PNGs from `assets/ui/` (upload them with `upload_image`). If none of those exist for something, draw a simple icon from frames/shapes rather than leaving text.
+- **Juice**: every reward gets motion and sound. Number count-ups, card flips on reveal cards, small particle bursts on rare finds, screen-edge flash for big moments.
+- **Mobile**: use Scale sizing plus `UIAspectRatioConstraint`, a `UIScale` driven by viewport size, and minimum tap targets of roughly 44 px on a phone. Nothing may overlap Roblox's default thumbstick or jump button.
+
+**UI verification loop**: after building each screen (HUD, Garage, Item Index, Inventory, reveal card, Trade Up, Settings), `screen_capture` it at desktop size and phone size, compare it side by side with the most similar image in `docs/ui-reference/`, write down the three biggest differences, fix them, and capture again. Repeat up to 3 times per screen. Log the result in `PROGRESS.md`.
+
 ## 13. Phases (do them in order)
 
 For **every** phase: build it, then run a playtest (`start_stop_play`), drive/walk with `user_keyboard_input` / `character_navigation`, take `screen_capture`s, read `get_console_output`, fix all errors and failed checks, then `git commit` with a clear message and append to `PROGRESS.md`: what was built, acceptance results (pass/fail per check), screenshots described, known issues, decisions made. Then write `SAVE POINT <phase>` in `PROGRESS.md` (I will save the place file in Studio when I see it).
@@ -159,7 +179,7 @@ For **every** phase: build it, then run a playtest (`start_stop_play`), drive/wa
 5. **Phase 5, rarity**: mutations, size, reveal cards, Item Index, announcements. Check: force-spawn one of each mutation (debug command) and confirm look, value and odds math.
 6. **Phase 6, ownership**: Collection, duplicates, pedestals, placement, passive and offline income. Check: place 4 items, income sign matches the sum.
 7. **Phase 7, progression**: Garage upgrades, Trade Up, persistence. Check: upgrades change measured top speed/HP/slots; data survives leaving and rejoining.
-8. **Phase 8, polish and mobile**: sounds, particles, UI pass, mobile layout check at phone resolution, performance pass.
+8. **Phase 8, polish and mobile**: full UI pass against Section 12b and the reference screenshots (run the UI verification loop on every screen), sounds, particles, mobile layout check at phone resolution, performance pass.
 9. **Phase 9, critique**: if you can run sub-agents, fan out reviewers in parallel; otherwise do these passes yourself one at a time. Each reviewer plays the game and critiques one area against the quality bar of top Roblox simulators such as Steal An Egg and Escape Tsunami for Brainrots: (a) first 60 seconds for a new player on a phone, (b) driving feel, (c) visual clarity of stages and rarity, (d) economy pacing (time to first Trade Up should be ~8-12 min), (e) bugs/exploits in remotes. Fix the top issues from every review, re-test, commit.
 
 Add a debug-only admin panel (only for the place owner) with: give Cash, set vehicle, teleport to stage N, force-spawn mutation, reset data. You need it for testing.
