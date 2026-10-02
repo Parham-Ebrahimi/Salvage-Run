@@ -34,6 +34,21 @@ function D.Execute(player,action,args,studioTest)
   local pos=Stage.Position(args.Stage,0,C.World.CalmDistance+C.World.SpawnDistance,C.Physics.Clearance)
   if run.State=="RUNNING" then run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero;run.LastPosition=pos;run.LastSample=os.clock();run.Deepest=math.max(run.Deepest,args.Stage)
   else player.Character:PivotTo(CFrame.new(pos)) end;return true
+ elseif action=="DriveTestBegin" and studioTest and run.State=="BASE" then
+  if D.DriveBackup then return false,"Test already active" end
+  D.DriveBackup={Player=player,Current=data.CurrentVehicle,Owned=data.OwnedVehicles["10"],Upgrades=data.Upgrades["10"]}
+  data.OwnedVehicles["10"]=true;data.CurrentVehicle=10;data.Upgrades["10"]={Speed=0,HP=0,Cargo=0,Boost=0}
+  player.Character:PivotTo(CFrame.new(0,3,C.World.BayZ));return ctx.Run.Start(player,10)
+ elseif action=="DriveTestEnd" and studioTest and D.DriveBackup and D.DriveBackup.Player==player then
+  local b=D.DriveBackup;data.CurrentVehicle=b.Current;data.OwnedVehicles["10"]=b.Owned;data.Upgrades["10"]=b.Upgrades;D.DriveBackup=nil
+  if run.State=="RUNNING" then ctx.Run.Fail(player,"Driving test complete") end
+  return true
+ elseif action=="WallFixture" and studioTest and run.State=="RUNNING" and (args.Angle==0 or args.Angle==30 or args.Angle==60) then
+  local pos=Vector3.new(-72,C.Physics.Clearance,-1)
+  local angle=math.rad(args.Angle);local dir=Vector3.new(math.cos(angle),0,-math.sin(angle))
+  run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+dir));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero
+  run.LastPosition=pos;run.PreviousPosition=pos;run.LastSample=os.clock();run.Stage=1
+  run.Vehicle:SetAttribute("ResetYaw",workspace:GetServerTimeNow());return true
  elseif action=="EntryFixture" and studioTest and run.State=="RUNNING" and C.Stages[args.Stage] then
   local pos=Stage.Position(args.Stage,10,-5,C.Physics.Clearance)
   run.Vehicle:PivotTo(CFrame.lookAt(pos,pos+C.World.Forward));run.Vehicle.PrimaryPart.AssemblyLinearVelocity=Vector3.zero

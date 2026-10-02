@@ -4,6 +4,12 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T3 driving PASS: Hover Bike, actual W, angles0/30/60; max speeds100.34/
+  103.82/103.94; maxX74.535/73.974/74.625 (inside inner face78), maxY2.21
+  (wall top48). No clipping/launch. Initial fixture hit a prop before reaching
+  a wall; moved fixture to the clear entrance. Temporary tier10 ownership and
+  upgrades restored before stopping Play. No script errors in Output.
+
 - T3 world batch: all26 walls verified at height48/thickness5. CenterY16→24,
   baseY0 unchanged; outward offset0.5 keeps inner faces X=±78 (strip),
   X=±178 (base), shoulder Z=2, back Z=178, end Z=-3498 unchanged.

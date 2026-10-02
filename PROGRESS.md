@@ -214,6 +214,10 @@ T3 dimensions verified in Studio:26 collidable stud walls,48 high/5 thick,
 bottom0, playable-side faces unchanged. Structural/narrowed gates pass.
 Fastest-vehicle collision acceptance pending.
 
+T3 acceptance now passed: actual Hover Bike drives at0/30/60 degrees,
+100.34–103.94 studs/sec, maxX74.63 inside face78, maxY2.21 below wall48.
+Original vehicle profile restored; Play stopped.
+
 T2 verified in Studio: structural inventory passes, narrowed floor/volume
 pairs zero, plot-border pairs zero, eight borders at0.54. Bay/SafeLine overlay
 tops now0.30; ground floor heights unchanged. Replay and rationale documented.
