@@ -1,0 +1,1115 @@
+[
+  {
+    "query": "grass tuft",
+    "asset": {
+      "description": "💫✨ Please Like, Favorite, and Leave a Comment if You Enjoyed Our Model! ✨💫\n\n\nThis asset was fully made in Roblox Studio. Thank you for the support <33!\n\n\nTags (Ignore): grass, foliage, plant, nature, végétaux, verdure, green, organic, flora, vegetation, meadow, field, lawn, garden, scenery, natural, outdoor, environment, biome, landscape, growth, bush, herb, plant life, ground cover, rooted, rooted plant, stem, leaf, blade, uncut, wild, unkempt, uncut lawn, wild growth, park, forest fl",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/138241998952273",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=138241998952273&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "138241998952273",
+      "name": "Grass Realistic Nature Ground Foliage Tufts",
+      "priceCents": 0,
+      "creatorName": "Glooc5365",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"CoreValidation\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"},\"2\":{\"flags\":{\"1\":\"string.char\"},\"name\":\"Check\",\"reason\":\"flagged\"},\"5\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"},\"4\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"},\"6\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"}},\"path\":\"ReplicatedStorage.SalvageAssets.grass tuft\",\"kept\":0,\"size\":{\"1\":19.857940673828126,\"3\":24.309978485107423,\"2\":2.680016279220581},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "small rock",
+    "asset": {
+      "description": "Low-Poly Small Rock.",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/4559971334",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=4559971334&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "4559971334",
+      "name": "Small Rock",
+      "priceCents": 0,
+      "creatorName": "oddgotbanned",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.small rock\",\"kept\":0,\"size\":{\"1\":4.749987602233887,\"3\":5.064263343811035,\"2\":4.75073766708374},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "tree stump",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/166226416",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=166226416&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "166226416",
+      "name": "Tree Stump",
+      "priceCents": 0,
+      "creatorName": "Sapphiros",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.tree stump\",\"kept\":0,\"size\":{\"1\":3.6414012908935549,\"3\":4.555293083190918,\"2\":4.658519744873047},\"parts\":71}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "wildflower",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/14629857106",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=14629857106&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "14629857106",
+      "name": "Wildflowers",
+      "priceCents": 0,
+      "creatorName": "Lazy_kitin",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.wildflower\",\"kept\":0,\"size\":{\"1\":19.468074798583986,\"3\":18.152494430541993,\"2\":9.029483795166016},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "junk pile",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/113212570128450",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=113212570128450&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "113212570128450",
+      "name": "🗑️ Trash Pile Rubbish Debris Junk Material Prop",
+      "priceCents": 0,
+      "creatorName": "Echo_Thunder201565",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.junk pile\",\"kept\":0,\"size\":{\"1\":11.860326766967774,\"3\":8.999999046325684,\"2\":0.6650589108467102},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "scrap pile",
+    "asset": {
+      "description": "💫✨ Please Like, Favorite, and Leave a Comment if You Enjoyed Our Model! ✨💫\n\n\nThis asset was fully made in Roblox Studio. Thank you for the support <33!\n\n\nTags (Ignore): grunge, derelict, decay, gritty, weathered, machinery, scrap, junk, debris, detritus, urban, decay, grit, dirt, grime, rust, metal, pipes, barrels, crates, containers, boxes, pallets, discarded, forgotten, abandoned, factory, warehouse, workshop, background, props, assets, environment, elements, detailing, scene, filler",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/132797525489587",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=132797525489587&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "132797525489587",
+      "name": "Industrial Clutter Junk Scrap Pile Debris Dump",
+      "priceCents": 0,
+      "creatorName": "Rextwi7406",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"spin\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":{\"1\":\"string.char\"},\"name\":\"Check\",\"reason\":\"flagged\"},\"2\":{\"flags\":[],\"name\":\"CoreValidation\",\"reason\":\"visual shell; no scripts needed\"},\"5\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"},\"4\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"},\"7\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"},\"6\":{\"flags\":[],\"name\":\"LocalScript\",\"reason\":\"visual shell; no scripts needed\"}},\"rejected\":true,\"parts\":235}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "tire stack",
+    "asset": {
+      "description": "A stack of tires to put in a rundown neighborhood or a garage or a racetrack or where ever",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/9504148189",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=9504148189&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "9504148189",
+      "name": "Tire Stack",
+      "priceCents": 0,
+      "creatorName": "RealgrumpyKitten1",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.tire stack\",\"kept\":0,\"size\":{\"1\":2.670473575592041,\"3\":2.7244882583618166,\"2\":3.6811084747314455},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "chain link fence",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/7992120142",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=7992120142&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "7992120142",
+      "name": "Chain Link Fence",
+      "priceCents": 0,
+      "creatorName": "logan3245678",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.chain link fence\",\"kept\":0,\"size\":{\"1\":0.23999999463558198,\"3\":26.67999839782715,\"2\":6.595545291900635},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "old fridge",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/131022266437920",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=131022266437920&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "131022266437920",
+      "name": "Old Fridge Retro Kitchen Appliance Vintage",
+      "priceCents": 0,
+      "creatorName": "Her0850N0vaPixel",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"qPerfectionWeld\",\"reason\":\"visual shell; no scripts needed\"},\"4\":{\"flags\":[],\"name\":\"EasyConfiguration\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":{\"1\":\"MarketplaceService\"},\"name\":\"Type\",\"reason\":\"flagged\"},\"2\":{\"flags\":[],\"name\":\"LightConfig\",\"reason\":\"visual shell; no scripts needed\"}},\"path\":\"ReplicatedStorage.SalvageAssets.old fridge\",\"kept\":0,\"size\":{\"1\":4.791407585144043,\"3\":8.522400856018067,\"2\":5.492382526397705},\"parts\":6}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"4b7c4b61-e35f-491e-8332-740be6d76fad\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Old Fridge Retro Kitchen Appliance Vintage\",\"name\":\"Old Fridge Retro Kitchen Appliance Vintage\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"131022266437920\",\"assetName\":\"Old Fridge Retro Kitchen Appliance Vintage\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:4b7c4b61-e35f-491e-8332-740be6d76fad\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "washing machine",
+    "asset": {
+      "description": "took 1h to build",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/2106113027",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=2106113027&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "2106113027",
+      "name": "Washing Machine",
+      "priceCents": 0,
+      "creatorName": "StarModelX",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.washing machine\",\"kept\":0,\"size\":{\"1\":4.095819473266602,\"3\":4.289475440979004,\"2\":4.96647310256958},\"parts\":20}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"000bfde9-568f-4a03-a46d-a9e503479fa9\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Washing Machine\",\"name\":\"Washing Machine\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"2106113027\",\"assetName\":\"Washing Machine\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:000bfde9-568f-4a03-a46d-a9e503479fa9\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "broken tv",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/14557683174",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=14557683174&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "14557683174",
+      "name": "Broken TV (w/ Glitch Effect)",
+      "priceCents": 0,
+      "creatorName": "DinoFan234B",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.broken tv\",\"kept\":0,\"size\":{\"1\":3.7623114585876467,\"3\":3.1296112537384035,\"2\":3.6365880966186525},\"parts\":9}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"a6e31d33-ea13-4e5d-8864-3bdd7282811d\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Broken TV (w/ Glitch Effect)\",\"name\":\"Broken TV (w/ Glitch Effect)\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"14557683174\",\"assetName\":\"Broken TV (w/ Glitch Effect)\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:a6e31d33-ea13-4e5d-8864-3bdd7282811d\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "cargo container",
+    "asset": {
+      "description": "intermodal containers fgher",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/7406028156",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=7406028156&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "7406028156",
+      "name": "cargo containers",
+      "priceCents": 0,
+      "creatorName": "fgher_gamer",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"rejected\":true,\"parts\":420}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"dddbcb09-b9e6-40c0-b71e-97eb291666e4\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.cargo containers\",\"name\":\"cargo containers\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"7406028156\",\"assetName\":\"cargo containers\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:dddbcb09-b9e6-40c0-b71e-97eb291666e4\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "dock crane",
+    "asset": {
+      "description": "Eh carry the massive containers of bloxy cola!",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/684705155",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=684705155&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "684705155",
+      "name": "Dock crane",
+      "priceCents": 0,
+      "creatorName": "jack_3362",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.dock crane\",\"kept\":0,\"size\":{\"1\":110.92010498046875,\"3\":59.15989685058594,\"2\":11.200006484985352},\"parts\":145}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"21931aec-5452-4536-8cd9-40fe67f3ef22\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Dock crane\",\"name\":\"Dock crane\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"684705155\",\"assetName\":\"Dock crane\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:21931aec-5452-4536-8cd9-40fe67f3ef22\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "anchor",
+    "asset": {
+      "description": "STOP THE SHIP!\r\n\r\nUsed for decoration. ",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/481477468",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=481477468&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "481477468",
+      "name": "Anchor",
+      "priceCents": 0,
+      "creatorName": "Jac16king",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.anchor\",\"kept\":0,\"size\":{\"1\":0.3938872814178467,\"3\":2.465985059738159,\"2\":3.638340473175049},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"9e1e769a-30bb-4922-8f46-0535d5f28190\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Anchor\",\"name\":\"Anchor\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"481477468\",\"assetName\":\"Anchor\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:9e1e769a-30bb-4922-8f46-0535d5f28190\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "furnace",
+    "asset": {
+      "description": "Furnace",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/12130179055",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=12130179055&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "12130179055",
+      "name": "Furnace",
+      "priceCents": 0,
+      "creatorName": "Jo_Lua",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.furnace\",\"kept\":0,\"size\":{\"1\":9.856213569641114,\"3\":9.599998474121094,\"2\":10.399995803833008},\"parts\":34}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"c343afbc-a2c3-4593-83e0-be0cd02c9788\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Furnace\",\"name\":\"Furnace\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"12130179055\",\"assetName\":\"Furnace\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:c343afbc-a2c3-4593-83e0-be0cd02c9788\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "factory machine",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/60688591",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=60688591&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "60688591",
+      "name": "Old Factory Machine",
+      "priceCents": 0,
+      "creatorName": "InvinciNinja",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.factory machine\",\"kept\":0,\"size\":{\"1\":5,\"3\":11.999998092651368,\"2\":8.400004386901856},\"parts\":11}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"fd0b6398-40d3-4145-9d69-5bdcce99a252\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Old Factory Machine\",\"name\":\"Old Factory Machine\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"60688591\",\"assetName\":\"Old Factory Machine\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:fd0b6398-40d3-4145-9d69-5bdcce99a252\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "smokestack",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/1003164316",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=1003164316&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "1003164316",
+      "name": "brick smokestack",
+      "priceCents": 0,
+      "creatorName": "morinabinks",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.smokestack\",\"kept\":0,\"size\":{\"1\":11.247669219970704,\"3\":12.77885627746582,\"2\":83.60448455810547},\"parts\":19}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"ea1fcb74-eab4-4400-a521-d78c54447d83\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.brick smokestack\",\"name\":\"brick smokestack\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"1003164316\",\"assetName\":\"brick smokestack\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:ea1fcb74-eab4-4400-a521-d78c54447d83\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "barbed wire",
+    "asset": {
+      "description": "Barbed wire / Razor Wire / Concertina Wire\nmade for use in prisons, use as you please.\n\nCredit to Aidan Callaghan on Sketchfab.",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/13958013198",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=13958013198&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "13958013198",
+      "name": "Barbed Wire",
+      "priceCents": 0,
+      "creatorName": "Sentry Corrections",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.barbed wire\",\"kept\":0,\"size\":{\"1\":5.5,\"3\":32.999996185302737,\"2\":5.500003814697266},\"parts\":2}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"95ec96d9-0de7-48e8-82ef-9f17c9aaf962\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Barbed Wire\",\"name\":\"Barbed Wire\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"13958013198\",\"assetName\":\"Barbed Wire\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:95ec96d9-0de7-48e8-82ef-9f17c9aaf962\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "military tent",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/6883609157",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=6883609157&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "6883609157",
+      "name": "Military Tent",
+      "priceCents": 0,
+      "creatorName": "ForestFireTree1",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.military tent\",\"kept\":0,\"size\":{\"1\":19.205774307250978,\"3\":25.98940658569336,\"2\":15.724590301513672},\"parts\":11}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"f591610c-09ce-4ca3-83c1-e7c6b00b27af\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Military Tent\",\"name\":\"Military Tent\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"6883609157\",\"assetName\":\"Military Tent\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:f591610c-09ce-4ca3-83c1-e7c6b00b27af\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "sandbags",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/12651656400",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=12651656400&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "12651656400",
+      "name": "Sandbag Barrier",
+      "priceCents": 0,
+      "creatorName": "Aheadit",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.sandbags\",\"kept\":0,\"size\":{\"1\":19.439998626708986,\"3\":3.398766040802002,\"2\":4.740478992462158},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"0d1318bd-2f46-41c4-9b54-d57eefe1c349\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Sandbag Barrier\",\"name\":\"Sandbag Barrier\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"12651656400\",\"assetName\":\"Sandbag Barrier\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:0d1318bd-2f46-41c4-9b54-d57eefe1c349\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "watchtower",
+    "asset": {
+      "description": "A wooden watch tower",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/5241611800",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=5241611800&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "5241611800",
+      "name": "Watchtower",
+      "priceCents": 0,
+      "creatorName": "dogdayboy1",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.watchtower\",\"kept\":0,\"size\":{\"1\":24.362918853759767,\"3\":31.1416072845459,\"2\":48.48970413208008},\"parts\":43}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"37036fae-b0b6-439a-aa13-24db93e794f8\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Watchtower\",\"name\":\"Watchtower\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"5241611800\",\"assetName\":\"Watchtower\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:37036fae-b0b6-439a-aa13-24db93e794f8\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "lab equipment",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/4855489831",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=4855489831&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "4855489831",
+      "name": "Lab Equipment (Breaking Bad)",
+      "priceCents": 0,
+      "creatorName": "DionManiac",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"qPerfectionWeld\",\"reason\":\"visual shell; no scripts needed\"}},\"path\":\"ReplicatedStorage.SalvageAssets.lab equipment\",\"kept\":0,\"size\":{\"1\":7.197483062744141,\"3\":4.095089912414551,\"2\":2.565596103668213},\"parts\":121}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"0fa8a9ea-a8e0-42af-81ba-1ad25d80b33c\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Lab Equipment (Breaking Bad)\",\"name\":\"Lab Equipment (Breaking Bad)\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"4855489831\",\"assetName\":\"Lab Equipment (Breaking Bad)\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:0fa8a9ea-a8e0-42af-81ba-1ad25d80b33c\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "server rack",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/17128613350",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=17128613350&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "17128613350",
+      "name": "Server Rack",
+      "priceCents": 0,
+      "creatorName": "•Games•Studio•",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"rejected\":true,\"parts\":271}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"2d248bd6-9b05-4a91-aa18-55275da57fb9\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Server Rack\",\"name\":\"Server Rack\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"17128613350\",\"assetName\":\"Server Rack\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:2d248bd6-9b05-4a91-aa18-55275da57fb9\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "computer desk",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/5297864495",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=5297864495&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "5297864495",
+      "name": "Desk and computer",
+      "priceCents": 0,
+      "creatorName": "MURMELI678",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.computer desk\",\"kept\":0,\"size\":{\"1\":8.389998435974121,\"3\":4.310020923614502,\"2\":6.3200154304504398},\"parts\":130}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"18e0d525-d457-48f1-be28-0d2592f1d908\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Desk and computer\",\"name\":\"Desk and computer\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"5297864495\",\"assetName\":\"Desk and computer\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:18e0d525-d457-48f1-be28-0d2592f1d908\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "containment tank",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/57151893",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=57151893&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "57151893",
+      "name": "containment tank",
+      "priceCents": 0,
+      "creatorName": "Johnathon2",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.containment tank\",\"kept\":0,\"size\":{\"1\":8,\"3\":7.999999046325684,\"2\":10.799997329711914},\"parts\":6}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"48c9415b-308c-4324-8495-85bf63363ed9\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.containment tank\",\"name\":\"containment tank\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"57151893\",\"assetName\":\"containment tank\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:48c9415b-308c-4324-8495-85bf63363ed9\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "biohazard barrel",
+    "asset": {
+      "description": "It makes toxic gas to everywhere",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/70765002",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=70765002&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "70765002",
+      "name": "Biohazard Barrel",
+      "priceCents": 0,
+      "creatorName": "Hedonutopia",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.biohazard barrel\",\"kept\":0,\"size\":{\"1\":3,\"3\":2.999999523162842,\"2\":3.899998903274536},\"parts\":4}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"91e20732-29a9-417a-92ce-146e807d05a5\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Biohazard Barrel\",\"name\":\"Biohazard Barrel\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"70765002\",\"assetName\":\"Biohazard Barrel\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:91e20732-29a9-417a-92ce-146e807d05a5\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "test tube",
+    "asset": {
+      "description": "This is a large test tube that can be used for animals, avatars or anthing you want ",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/135827610386594",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=135827610386594&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "135827610386594",
+      "name": "Test Tube",
+      "priceCents": 0,
+      "creatorName": "BeanifyMe",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.test tube\",\"kept\":0,\"size\":{\"1\":19.092042922973634,\"3\":19.09197425842285,\"2\":22.77499008178711},\"parts\":57}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"651bc910-6756-468d-9db2-9fa9e63078ee\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.Test Tube\",\"name\":\"Test Tube\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"135827610386594\",\"assetName\":\"Test Tube\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:651bc910-6756-468d-9db2-9fa9e63078ee\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "ufo",
+    "asset": {
+      "description": "Made by Luckymaxer",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/162741606",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=162741606&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "162741606",
+      "name": "UFO",
+      "priceCents": 0,
+      "creatorName": "Roblox",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"Script\",\"reason\":\"visual shell; no scripts needed\"},\"2\":{\"flags\":[],\"name\":\"ControlScript\",\"reason\":\"visual shell; no scripts needed\"}},\"path\":\"ReplicatedStorage.SalvageAssets.ufo\",\"kept\":0,\"size\":{\"1\":15.999702453613282,\"3\":15.999549865722657,\"2\":4.476825714111328},\"parts\":47}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"295f1806-5294-478c-b48b-67a44a2bd361\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.UFO\",\"name\":\"UFO\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"162741606\",\"assetName\":\"UFO\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:295f1806-5294-478c-b48b-67a44a2bd361\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "spaceship wreck",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/131804872643900",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=131804872643900&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "131804872643900",
+      "name": "💥 Sci-Fi Spaceship Wreck Asteroid Space Ship",
+      "priceCents": 0,
+      "creatorName": "XzVenatorrXTurbotzX1",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"ButtonIgnitionScript\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":{\"1\":\"MarketplaceService\"},\"name\":\"Type\",\"reason\":\"flagged\"},\"2\":{\"flags\":[],\"name\":\"LightConfig\",\"reason\":\"visual shell; no scripts needed\"},\"5\":{\"flags\":[],\"name\":\"PoseTexture\",\"reason\":\"visual shell; no scripts needed\"},\"4\":{\"flags\":[],\"name\":\"EasyConfiguration\",\"reason\":\"visual shell; no scripts needed\"},\"6\":{\"flags\":[],\"name\":\"TextureConfiguration\",\"reason\":\"visual shell; no scripts needed\"}},\"rejected\":true,\"parts\":195}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"83b496db-0156-4796-b15c-4c039229969c\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.💥 Sci-Fi Spaceship Wreck Asteroid Space Ship\",\"name\":\"💥 Sci-Fi Spaceship Wreck Asteroid Space Ship\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"131804872643900\",\"assetName\":\"💥 Sci-Fi Spaceship Wreck Asteroid Space Ship\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:83b496db-0156-4796-b15c-4c039229969c\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "alien crystal",
+    "asset": {
+      "description": "official\n\ndux_Gamer",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/10417066479",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=10417066479&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "10417066479",
+      "name": "alien crystal",
+      "priceCents": 0,
+      "creatorName": "Duxcomp",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.alien crystal\",\"kept\":0,\"size\":{\"1\":52.351898193359378,\"3\":39.122337341308597,\"2\":63.23835754394531},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"d054a6c7-615d-4011-990a-cb16d5226d0e\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.alien crystal\",\"name\":\"alien crystal\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"10417066479\",\"assetName\":\"alien crystal\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:d054a6c7-615d-4011-990a-cb16d5226d0e\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "floating rock",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/127684722020066",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=127684722020066&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "127684722020066",
+      "name": "floating rock",
+      "priceCents": 0,
+      "creatorName": "justinzoo123",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.floating rock\",\"kept\":0,\"size\":{\"1\":2.5418739318847658,\"3\":2.327565908432007,\"2\":3.5328569412231447},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"1d245cb8-d18d-4ca3-8578-a26fa1777dc0\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.floating rock\",\"name\":\"floating rock\",\"className\":\"Model\"}],\"sandboxed\":false,\"assetType\":\"Model\",\"assetId\":\"127684722020066\",\"assetName\":\"floating rock\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:1d245cb8-d18d-4ca3-8578-a26fa1777dc0\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "portal",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/18506880748",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=18506880748&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "18506880748",
+      "name": "💫 Teleport Portal Teleporter Working",
+      "priceCents": 0,
+      "creatorName": "Manestronomer",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"Script\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":[],\"name\":\"Credits\",\"reason\":\"visual shell; no scripts needed\"},\"2\":{\"flags\":[],\"name\":\"Script\",\"reason\":\"visual shell; no scripts needed\"}},\"path\":\"ReplicatedStorage.SalvageAssets.portal\",\"kept\":0,\"size\":{\"1\":3.020676612854004,\"3\":28.485795974731447,\"2\":15.919607162475586},\"parts\":16}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"887dd69f-19df-4cb1-95a1-d3b021b848ce\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.💫 Teleport Portal Teleporter Working\",\"name\":\"💫 Teleport Portal Teleporter Working\",\"className\":\"Folder\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"18506880748\",\"assetName\":\"💫 Teleport Portal Teleporter Working\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:887dd69f-19df-4cb1-95a1-d3b021b848ce\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "glitch cube",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/129968267658404",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=129968267658404&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "129968267658404",
+      "name": "⚡ Glitch Block Corrupt Debris Error Cube",
+      "priceCents": 0,
+      "creatorName": "Lavam8Herod155313",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"LightConfig\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":[],\"name\":\"EasyConfiguration\",\"reason\":\"visual shell; no scripts needed\"},\"2\":{\"flags\":{\"1\":\"MarketplaceService\"},\"name\":\"Type\",\"reason\":\"flagged\"}},\"path\":\"ReplicatedStorage.SalvageAssets.glitch cube\",\"kept\":0,\"size\":{\"1\":2,\"3\":3.999999523162842,\"2\":0.9999997615814209},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    },
+    "insert": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"insertGuid\":\"2b2acff0-0f43-4d28-82a0-7e32f5aacf00\",\"insertedInstances\":[{\"fullPath\":\"game.ServerStorage.AssetQuarantine.⚡ Glitch Block Corrupt Debris Error Cube\",\"name\":\"⚡ Glitch Block Corrupt Debris Error Cube\",\"className\":\"Model\"}],\"sandboxed\":true,\"assetType\":\"Model\",\"sandboxNote\":\"Inserted and set Sandboxed property to true on all scripts with all SecurityCapabilities included except for dangerous ones.\",\"assetId\":\"129968267658404\",\"assetName\":\"⚡ Glitch Block Corrupt Debris Error Cube\",\"status\":\"success\",\"isPackage\":false,\"tag\":\"Assistant:2b2acff0-0f43-4d28-82a0-7e32f5aacf00\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "scrap pile",
+    "asset": {
+      "description": "",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/139715416205638",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=139715416205638&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "139715416205638",
+      "name": "Trash Waste Litter Junk Scrap Pile Heap RP Decor",
+      "priceCents": 0,
+      "creatorName": "ubiquitarniasm",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"LightConfig\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":{\"1\":\"MarketplaceService\"},\"name\":\"Type\",\"reason\":\"flagged\"},\"2\":{\"flags\":[],\"name\":\"EasyConfiguration\",\"reason\":\"visual shell; no scripts needed\"}},\"path\":\"ReplicatedStorage.SalvageAssets.scrap pile\",\"kept\":0,\"size\":{\"1\":5.594812870025635,\"3\":5.144070625305176,\"2\":3.587212085723877},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "cargo container",
+    "asset": {
+      "description": "cargo_container.mdl\n\n- Counter-Strike: Global Offensive 2018\n\n- Valve",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/5375958178",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=5375958178&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "5375958178",
+      "name": "cargo_container",
+      "priceCents": 0,
+      "creatorName": "akashi_mizu",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.cargo container\",\"kept\":0,\"size\":{\"1\":7.913513660430908,\"3\":23.62721824645996,\"2\":7.871859550476074},\"parts\":1}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "server rack",
+    "asset": {
+      "description": "Roughly 30K polygons\n\nSplit into multiple parts so you can arange them however you want.\n\nModel by \"EntropyNine\" on Sketchfab.",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/120631576642977",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=120631576642977&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "120631576642977",
+      "name": "Realistic Server Rack",
+      "priceCents": 0,
+      "creatorName": "W1therEdBonn1e728",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":[],\"path\":\"ReplicatedStorage.SalvageAssets.server rack\",\"kept\":0,\"size\":{\"1\":2.2997708320617677,\"3\":2.555652141571045,\"2\":7.500475883483887},\"parts\":15}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "query": "spaceship wreck",
+    "asset": {
+      "description": "An ancient deep-space spaceship wreck O_O\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nTAGS: space ship, spaceship, ship, cosmos, mass effect, star wars, space combat, battlecruiser, dreadnought, warship, alien, extra-terrestrial, cosmic, cruiser, destroyer, corvette, frigate, proton torpedo, laser cannon, warp, warp drive, hyperspace, spacecraft, Alliance, Systems alliance, Asari, Turian, Salarian, Citadel, Destiny ascension, Normandy, the illusive man, TIM, starship, star wars, star trek, kinetic energy, laser, Noveria, Arcturus Prime, Sovereign, Harbinger, SSV, Garrus",
+      "creatorStoreUrl": "https://create.roblox.com/store/asset/142364664",
+      "assetType": "Model",
+      "thumbnailUrl": "https://thumbnails.roblox.com/v1/assets?assetIds=142364664&returnPolicy=PlaceHolder&size=150x150&format=Png",
+      "isFree": true,
+      "assetId": "142364664",
+      "name": "Massive spaceship wreck",
+      "priceCents": 0,
+      "creatorName": "HandiQuack",
+      "source": "creator_store"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"removed\":{\"1\":{\"flags\":[],\"name\":\"Script\",\"reason\":\"visual shell; no scripts needed\"},\"3\":{\"flags\":[],\"name\":\"Detonate\",\"reason\":\"visual shell; no scripts needed\"},\"2\":{\"flags\":[],\"name\":\"Script\",\"reason\":\"visual shell; no scripts needed\"},\"5\":{\"flags\":[],\"name\":\"Shake\",\"reason\":\"visual shell; no scripts needed\"},\"4\":{\"flags\":[],\"name\":\"Atom\",\"reason\":\"visual shell; no scripts needed\"}},\"rejected\":true,\"parts\":253}"
+        }
+      ],
+      "isError": false
+    }
+  }
+]
