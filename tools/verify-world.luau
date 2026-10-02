@@ -49,11 +49,7 @@ for i=1,10 do
  local stage=child(stages,tostring(i),"Folder")
  local ground=child(stage,"Ground","BasePart")
  if ground then check(ground.Anchored and ground.CanCollide,"Stage "..i.." anchored/collidable floor");check(ground.Size==Vector3.new(160,4,350),"Stage "..i.." floor size");check(ground.Position==Vector3.new(0,-2,-(i-.5)*350),"Stage "..i.." continuous floor position")end
- local arch=child(stage,"Arch","Model")
- check(named(arch,"Pillar")==2 and named(arch,"ArchLight")==2,"Stage "..i.." arch pillars/lights")
- local header=child(arch,"Header","BasePart")
- local text=header and header:FindFirstChildWhichIsA("TextLabel",true)
- check(text~=nil and text.Text:find(tostring(i),1,true)~=nil and text.Text:find("☠",1,true)~=nil,"Stage "..i.." numbered danger sign")
+ check(stage and not stage:FindFirstChild("Arch"),"Stage "..i.." must have no entrance arch/name sign")
  local props=child(stage,"Props","Folder");check(count(props)==8,"Stage "..i.." eight props");propCount+=count(props)
  if props then for _,p in props:GetChildren()do check(p:IsA("Model") and p:FindFirstChildWhichIsA("BasePart",true)~=nil,"Stage "..i.." prop geometry: "..p.Name);check(p.Name:sub(1,8)~="MISSING ","Unresolved prop placeholder "..p.Name)end end
  if i==4 then check(named(stage,"WaterEdge")==2,"Stage 4 two water edges")end

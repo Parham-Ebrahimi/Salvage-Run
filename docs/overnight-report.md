@@ -4,6 +4,15 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T1 world batch: removed 10 Arch models containing 50 Parts (20 pillars,
+  10 headers, 20 lights) and 10 SurfaceGuis with stage names/skulls. Originals
+  copied to ServerStorage.ArtBackups.StageArchesBeforeO2. No gameplay source
+  references Arch; StageService remains coordinate-based. Builder and verifier
+  now expect zero arches. Studio structural and plot-border gates passed.
+  Drive-through acceptance remains pending. SAVE POINT recorded.
+- Git push succeeded after verification of the existing owner repository and
+  explicit work-order authorization: origin/main includes 084620a and 40fc7bd.
+
 - T4-first: generated command-context module factories from repo sources;
   full protected builder test passed in Studio Edit and restored the exact
   original world. Inventory: 4 plots / 48 pedestals / 10 stages / 80 props /

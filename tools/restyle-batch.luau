@@ -45,7 +45,8 @@ return function(stageNumber, verifyInventory)
 			targetSet[p] = true
 		end
 	end
-	for _, p in stage:GetDescendants() do if p:IsA("BasePart") then include(p, p:IsDescendantOf(stage.Arch)) end end
+	local arch = stage:FindFirstChild("Arch")
+	for _, p in stage:GetDescendants() do if p:IsA("BasePart") then include(p, arch ~= nil and p:IsDescendantOf(arch)) end end
 	local wallCount = 0
 	for _, p in world.Walls:GetChildren() do
 		if p.Name == "StripWall" and p:IsA("BasePart") and math.abs(p.Position.Z - stage.Ground.Position.Z) < .01 then include(p, false); wallCount += 1 end

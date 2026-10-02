@@ -51,12 +51,8 @@ for i,s in C.Stages do
  local f=Instance.new("Folder");f.Name=tostring(i);f.Parent=stages
  local start=-(i-1)*W.StageLength
  local floor=part("Ground",Vector3.new(W.Width,W.GroundThickness,W.StageLength),Vector3.new(0,-W.GroundThickness/2,start-W.StageLength/2),s.Color,s.Material,f);floor:SetAttribute("Stage",i)
- local arch=Instance.new("Model");arch.Name="Arch";arch.Parent=f
- for _,side in {-1,1} do part("Pillar",Vector3.new(3,27,3),Vector3.new(side*(W.Width/2-6),13.5,start-2),s.Color:Lerp(C.UI.Dark,.35),Enum.Material.Metal,arch) end
- local header=part("Header",Vector3.new(W.Width-9,9,3),Vector3.new(0,25,start-2),s.Color:Lerp(C.UI.Dark,.55),Enum.Material.Metal,arch)
- sign(header,tostring(i).."  "..string.upper(s.Name).."   "..string.rep("☠",s.Skulls))
- header.CFrame=header.CFrame*CFrame.Angles(0,math.pi,0)
- for _,side in {-1,1} do part("ArchLight",Vector3.new(1,24,1),Vector3.new(side*(W.Width/2-4),12,start),s.Fog,Enum.Material.Neon,arch) end
+ -- Owner O2: no stage-start arch, flag or stage-name sign. Stage names
+ -- remain in Config; StageService uses position rather than entrance models.
  local props=Instance.new("Folder");props.Name="Props";props.Parent=f
  for k=1,W.PropCount do
   local key=s.Props[(k-1)%#s.Props+1];local template=assets:FindFirstChild(key)
