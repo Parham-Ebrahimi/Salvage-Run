@@ -210,6 +210,10 @@ STOP: tell the user to save/publish the verified current place to Roblox. Wait f
 - STOP ON ERROR / SAVE POINT: report the failed and fully rolled-back wall batch. Ask the user to save/publish the successfully restored overlap repair. Requested wall enlargement and stud-wall styling are NOT DONE; await further instruction before retrying. No Play control taken.
 # Overnight 2026-10-02 — protected builder verification
 
+T3 dimensions verified in Studio:26 collidable stud walls,48 high/5 thick,
+bottom0, playable-side faces unchanged. Structural/narrowed gates pass.
+Fastest-vehicle collision acceptance pending.
+
 T2 verified in Studio: structural inventory passes, narrowed floor/volume
 pairs zero, plot-border pairs zero, eight borders at0.54. Bay/SafeLine overlay
 tops now0.30; ground floor heights unchanged. Replay and rationale documented.

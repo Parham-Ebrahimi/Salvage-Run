@@ -1,5 +1,7 @@
 -- Execute this repo file with Studio MCP in Edit mode; no managed scripts are edited.
 local C=require(game.ReplicatedStorage.Shared.Config)
+local Geometry=require(game.ReplicatedStorage.Shared.WorldGeometry)
+local Style=require(game.ReplicatedStorage.Shared.VisualStyle)
 local old=workspace:FindFirstChild("SalvageWorld"); if old then old:Destroy() end
 local world=Instance.new("Folder"); world.Name="SalvageWorld"; world.Parent=workspace
 local function part(name,size,pos,color,material,parent)
@@ -35,15 +37,21 @@ for i=1,W.PlotCount do
  end
 end
 local walls=Instance.new("Folder");walls.Name="Walls";walls.Parent=world
+local function wall(name,side,stage,color)
+ local size,pos=Geometry.WallSpec(name,side,stage)
+ local p=part(name,size,pos,color,Enum.Material.Concrete,walls)
+ local contact=p.CurrentPhysicalProperties;Style.Apply(p,"Stud");p.CustomPhysicalProperties=contact
+ return p
+end
 for _,side in {-1,1} do
- part("BaseWall",Vector3.new(W.WallThickness,W.WallHeight,W.BaseDepth),Vector3.new(side*W.BaseWidth/2,W.WallHeight/2,W.BaseDepth/2),Color3.fromRGB(69,81,88),Enum.Material.Concrete,walls)
- part("Shoulder",Vector3.new((W.BaseWidth-W.Width)/2,W.WallHeight,W.WallThickness),Vector3.new(side*(W.BaseWidth+W.Width)/4,W.WallHeight/2,0),Color3.fromRGB(69,81,88),Enum.Material.Concrete,walls)
+ wall("BaseWall",side,nil,Color3.fromRGB(69,81,88))
+ wall("Shoulder",side,nil,Color3.fromRGB(69,81,88))
  for stage=1,#C.Stages do
-  part("StripWall",Vector3.new(W.WallThickness,W.WallHeight,W.StageLength),Vector3.new(side*W.Width/2,W.WallHeight/2,-(stage-.5)*W.StageLength),C.Stages[stage].Color:Lerp(Color3.new(.2,.2,.25),.65),Enum.Material.Concrete,walls)
+  wall("StripWall",side,stage,C.Stages[stage].Color:Lerp(Color3.new(.2,.2,.25),.65))
  end
 end
-part("BackWall",Vector3.new(W.BaseWidth,W.WallHeight,W.WallThickness),Vector3.new(0,W.WallHeight/2,W.BaseDepth),Color3.fromRGB(69,81,88),Enum.Material.Concrete,walls)
-part("EndWall",Vector3.new(W.Width,W.WallHeight,W.WallThickness),Vector3.new(0,W.WallHeight/2,-#C.Stages*W.StageLength),C.UI.Dark,Enum.Material.Concrete,walls)
+wall("BackWall",0,nil,Color3.fromRGB(69,81,88))
+wall("EndWall",0,nil,C.UI.Dark)
 local stages=Instance.new("Folder");stages.Name="Stages";stages.Parent=world
 local assets=game.ReplicatedStorage.SalvageAssets
 local missing={}

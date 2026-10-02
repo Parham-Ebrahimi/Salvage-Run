@@ -19,6 +19,9 @@ C.Hazards = { Count=4, Width=18, Length=16, SlowFraction=.55, OilGrip=.35, Damag
 C.Timing = { ServerTick=.1, Snapshot=.25, RemoteWindow=1, RemoteLimit=12, ActionCooldown=.15, FailureHold=2, DataSave=60, SessionLease=180, StudioLockReclaim=10, StudioLockRenew=5, LoadRetries=4, RetryDelay=2, LockWait=6, ShutdownDeadline=25, AnnouncementSeconds=6, TipSeconds=12 }
 C.Data = { Name="SalvageRun_v1", SaveRetries=3 }
 C.World.PlotSideBorderDrop=.06
+C.World.WallHeight=48
+C.World.WallThickness=5
+C.World.WallOriginalThickness=4
 C.World.BaySurfaceLift=.14
 C.World.SafeSurfaceLift=.05
 C.Physics.ChassisDensity=2

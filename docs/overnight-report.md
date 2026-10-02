@@ -4,6 +4,13 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T3 world batch: all26 walls verified at height48/thickness5. CenterY16→24,
+  baseY0 unchanged; outward offset0.5 keeps inner faces X=±78 (strip),
+  X=±178 (base), shoulder Z=2, back Z=178, end Z=-3498 unchanged.
+  Collision, colors and contact physics preserved; all26 use SalvageStud.
+  Builder and verifier share WorldGeometry. Fastest-vehicle tests pending.
+  SAVE POINT recorded.
+
 - T2: narrowed visible slab/volume check replaces broad pass criterion. Initial
   three separated overlay pairs cleared; Studio reports zero floor pairs and
   zero plot-border pairs, eight borders at0.54, structural inventory PASS.

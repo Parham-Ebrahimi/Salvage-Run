@@ -61,9 +61,16 @@ local walls=child(world,"Walls","Folder")
 check(count(walls)==26,"Exactly 26 perimeter walls across the whole map")
 check(named(walls,"StripWall")==20 and named(walls,"BaseWall")==2 and named(walls,"Shoulder")==2 and named(walls,"BackWall")==1 and named(walls,"EndWall")==1,"Perimeter wall categories")
 local finalWalls=0
+local Geometry=require(game.ReplicatedStorage.Shared.WorldGeometry)
 if walls then for _,p in walls:GetChildren()do
  check(p:IsA("BasePart") and p.CanCollide and p.Anchored,"Collidable anchored wall "..p.Name)
- if p:IsA("BasePart") then check(p.Size.Y==32,"32-stud wall height");if p.Position.Z<=-3150 then finalWalls+=1 end end
+ if p:IsA("BasePart") then
+  local size,pos=Geometry.ForWall(p)
+  check((p.Size-size).Magnitude<.001 and (p.Position-pos).Magnitude<.001,"48-high/5-thick outward wall "..p.Name)
+  check((p.CFrame.UpVector-Vector3.yAxis).Magnitude<.001 and (p.CFrame.RightVector-Vector3.xAxis).Magnitude<.001,"Axis-aligned wall")
+  check(p.MaterialVariant=="SalvageStud","Stud perimeter wall")
+  if p.Position.Z<=-3150 then finalWalls+=1 end
+ end
 end end
 check(finalWalls==3,"Stage 10 two side walls and final end wall")
 local assets=child(game.ReplicatedStorage,"SalvageAssets","Folder")
