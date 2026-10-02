@@ -1,5 +1,21 @@
 # CODEX ONE-SHOT BUILD: SALVAGE RUN (Roblox)
 
+## Overnight authorization — 2026-10-02
+
+The owner explicitly said go and confirmed the recovered place was saved. Follow OVERNIGHT_BACKLOG.md unattended, starting with T0 and the added T4 command-context builder item. Do not ask questions or wait at SAVE POINTs tonight; record them in docs/overnight-report.md. Small batches must be verified and committed. Playtests are authorized, one at a time, and the run must end in Edit mode. Until T2 is implemented, verification means structural inventory plus zero narrowed plot-border overlaps; the historical 2,773 broad candidates do not fail a batch. Missing uploads/UIKits go into docs/owner-todo.md. These instructions override older approval/publish waits below for this overnight run.
+
+## 2. Overrides (newer owner decisions, these beat CODEX_PROMPT.md)
+
+- **O1 Art direction is cartoony.** Bright, colorful, chunky, toy-like. Mobs, vehicles, collectible items, props and UI currently look too realistic. Nothing may look realistic or gritty. No gore.
+- **O2 No stage name flag and no stage start arch.** The flag/banner above the start of every stage that shows the stage name must be removed, and so must the whole arch (structure, skulls, lights, labels) at each stage start.
+- **O3 Perimeter walls are taller and slightly thicker** (numbers in task T3).
+- **O4 Stud style stays.** Block Parts use the shared stud MaterialVariant; MeshParts stay smooth, color only. All new world pieces use the VisualStyle helper from the start.
+- **O5 Under-tier vehicles collect slower.** A vehicle below a stage's recommended tier takes noticeably longer to collect there, so the stage feels like a death trap until the player upgrades (task T6).
+- **O6 An AFK progression system is in scope** (task T10). Trade Up remains the only prestige. AFK progress persists across Trade Up and must never become a second prestige.
+
+
+---
+
 You are building a complete, playable Roblox game in one long autonomous session. Work through every phase below in order without waiting for me. Do not stop to ask questions; when something is ambiguous, pick the option that best matches the design doc, write the decision in `PROGRESS.md`, and keep going.
 
 **User's recovery and coordination rules (override autonomous continuation above):** At every `SAVE POINT`, stop, tell the user to save/publish the current place to Roblox, and wait for their confirmation before starting the next phase. Do not start or stop a playtest while the user may be testing; obtain an explicit handoff before taking control of Play. Never mark work done in `PROGRESS.md` until verified in the connected Studio. Label source-only checks and untested runtime behavior accurately.
