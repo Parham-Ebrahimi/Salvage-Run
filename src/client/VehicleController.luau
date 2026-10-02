@@ -27,6 +27,10 @@ function V.Init()
   local reset=m:GetAttribute("ResetYaw") or 0
   if reset>(V.ResetAt or 0) then V.ResetAt=reset;local _,yaw=root.CFrame:ToOrientation();V.Yaw=yaw;V.Speed=0 end
   local throttle=seat.ThrottleFloat;local steer=seat.SteerFloat
+  if Input.KeyboardEnabled and not Input:GetFocusedTextBox() then
+   throttle=(Input:IsKeyDown(Enum.KeyCode.W) and 1 or 0)-(Input:IsKeyDown(Enum.KeyCode.S) and 1 or 0)
+   steer=(Input:IsKeyDown(Enum.KeyCode.D) and 1 or 0)-(Input:IsKeyDown(Enum.KeyCode.A) and 1 or 0)
+  end
   local target=throttle>=0 and throttle*max or throttle*max*C.Physics.ReverseFraction
   local brake=throttle*V.Speed<0 or throttle==0
   local accel=(brake and C.Physics.Braking or C.Physics.Acceleration)*dt

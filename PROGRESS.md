@@ -73,3 +73,16 @@ SAVE POINT 5
 - Live persistence and multiplayer ownership under separate actual accounts remain UNVERIFIED. Current local place deliberately uses Studio scratch data.
 
 SAVE POINT 6
+
+## Phase 7 — progression and persistent rejoin
+
+- Garage applies four five-level tracks; Trade Up checks all tracks, banked stage and Cash, keeps earlier vehicles and ownership, and starts the next vehicle with zero levels.
+- PASS: one level changed Skateboard stats 40 → 42.4 speed, 100 → 115 HP, 6 → 7 slots, 2 → 2.2 boost seconds and 8 → 7.2 cooldown seconds. At five levels the real spawned Skateboard has speed 52, HP 175 and 11 slots. W driving measured **51.94 studs/sec**, minimum up-vector 1.0. S crossed the Safe Line and banked a real collected item for $50.
+- FAIL then FIXED: default seat controls in the recovered Studio session reported ThrottleFloat 0 with W down. Shared controller now reads W/S/A/D explicitly on keyboard; cold-load measured speed passes. Mobile seat input remains for Phase 8 testing.
+- PASS: Trade Up unlocked BMX; old maxed Skateboard, ten Collection entries and four pedestal selections survived. A later BMX Trade Up attempt with Stage 1 banked is rejected because Stage 2 must be banked. Garage/trade desktop captures show the conditions.
+- PASS: restored metadata to the same original user game (place 120476079479285, universe 10768946482), without publishing. DataService uses its separate `_Studio` DataStore. A real UpdateAsync Save returned true. Stopped Play, rebuilt/cold-opened, and rejoined: Scratch=false, Cash, both vehicles, five-level Skateboard tracks, ten finds, Index, Settings, DeepestBanked=1 and all four pedestal keys loaded correctly. Offline Cash was credited on that real rejoin.
+- Found client Ready can arrive before asynchronous data load and miss the offline popup. Credit is correct; popup handshake needs fixing in Phase 8.
+- Cold-loaded valid local sound paths; pedestal placement causes no missing-sound error. One console error was QA instrumentation using the wrong folder name; corrected to RunVehicles. A direct MCP remote invocation was blocked by capability metadata, not by game logic; ordinary game UI works.
+- Production save namespace is untouched. Actual two-player concurrent lock contention and live-server performance remain UNVERIFIED.
+
+SAVE POINT 7
