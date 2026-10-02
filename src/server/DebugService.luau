@@ -69,6 +69,10 @@ function D.Execute(player,action,args,studioTest)
   return out
  elseif action=="IncomeCheck" and studioTest then
   return {Income=ctx.Collection.Income(data),Sign=ctx.Plots[player].Income.SurfaceGui.TextLabel.Text,Pedestals=data.Pedestals}
+ elseif action=="OfflineFixture" and studioTest and run.State=="BASE" then
+  local before=data.Cash;data.LastOnline=os.time()-C.Economy.OfflineCap*2
+  ctx.Display.Leave(player);ctx.Display.Join(player)
+  return {Expected=ctx.Collection.Income(data)*C.Economy.OfflineCap*C.Economy.OfflineRate,Actual=data.Cash-before}
  elseif action=="PlaceFixture" and studioTest then
   ctx.Run.Home(player);local i=0
   for key in data.Collection do i+=1;if i>4 then break end;ctx.Collection.Place(player,i,key)end

@@ -29,7 +29,7 @@ function D.Refresh(player)
   model.Name="Display";local _,size=model:GetBoundingBox();local pos=p.Position+Vector3.new(0,p.Size.Y/2+size.Y/2,0);model:PivotTo(CFrame.new(pos));model:SetAttribute("DisplayPosition",pos);model.Parent=p
   local gui=Instance.new("BillboardGui");gui.Name="Nameplate";gui.Adornee=model.PrimaryPart;gui.Size=UDim2.fromOffset(240,100);gui.StudsOffset=Vector3.new(0,size.Y/2+2,0);gui.MaxDistance=C.World.ApproachDistance;gui.Enabled=false;gui.Parent=model
   local text=Instance.new("TextLabel");text.Size=UDim2.fromScale(1,1);text.BackgroundColor3=C.UI.Dark;text.BackgroundTransparency=.15;text.TextColor3=C.Mutations[entry.Mutation].Color;text.Font=C.UI.Font;text.TextSize=17;text.TextWrapped=true
-  text.Text=C.ItemsById[entry.Item].DisplayName.."\n"..C.Mutations[entry.Mutation].Name.." · "..C.Sizes[entry.Size].Name.."\n"..F.ExactOdds(Rarity.Odds(entry.Mutation,entry.Size)).." · $"..F.Number(Rarity.Value(entry.Item,entry.Mutation,entry.Size)*C.Economy.PassiveRate).."/sec";text.Parent=gui
+  text.Text=C.ItemsById[entry.Item].DisplayName.."\n"..C.Mutations[entry.Mutation].Name.." · "..C.Sizes[entry.Size].Name.."\n"..F.ExactOdds(Rarity.Odds(entry.Mutation,entry.Size)).." · $"..F.Rate(Rarity.Value(entry.Item,entry.Mutation,entry.Size)*C.Economy.PassiveRate).."/sec";text.Parent=gui
   local corner=Instance.new("UICorner");corner.CornerRadius=UDim.new(0,C.UI.Corner);corner.Parent=text
  end
  plot.Income.SurfaceGui.TextLabel.Text="$"..F.Rate(Collection.Income(data)).."/sec"

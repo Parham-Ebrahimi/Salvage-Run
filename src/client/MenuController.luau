@@ -77,7 +77,7 @@ function M.Open(name)
    U.Item(r,entry.Item,entry.Mutation,UDim2.fromScale(.19,.85),UDim2.fromScale(.01,.05))
    caption(r,C.ItemsById[entry.Item].DisplayName.."\n"..C.Mutations[entry.Mutation].Name.." · "..C.Sizes[entry.Size].Name,UDim2.fromScale(.50,.52),UDim2.fromScale(.21,.04),C.Mutations[entry.Mutation].Color)
    local value=require(game.ReplicatedStorage.Shared.Config).ItemsById[entry.Item].BaseValue*C.Stages[C.ItemsById[entry.Item].Stage].Multiplier*C.Mutations[entry.Mutation].Multiplier*C.Sizes[entry.Size].Multiplier
-   caption(r,"$"..F.Number(value*C.Economy.PassiveRate).."/sec · "..F.ExactOdds((C.Mutations[entry.Mutation].Odds>0 and C.Mutations[entry.Mutation].Odds or 1)/C.Sizes[entry.Size].Probability),UDim2.fromScale(.51,.32),UDim2.fromScale(.2,.64))
+   caption(r,"$"..F.Rate(value*C.Economy.PassiveRate).."/sec · "..F.ExactOdds((C.Mutations[entry.Mutation].Odds>0 and C.Mutations[entry.Mutation].Odds or 1)/C.Sizes[entry.Size].Probability),UDim2.fromScale(.51,.32),UDim2.fromScale(.2,.64))
    U.Button(r,"PLACE",C.UI.Green,UDim2.fromScale(.23,.55),UDim2.fromScale(.74,.2),function()M.Placement(record.Key)end)
   end
   if #list==0 then caption(row(content,94),"Bank a haul to start your Collection!",nil,nil,C.UI.Paper) end

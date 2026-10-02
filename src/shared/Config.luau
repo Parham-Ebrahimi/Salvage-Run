@@ -34,7 +34,7 @@ C.Hazards.HopClearance=2.5
 C.Physics.OilSpin=.7
 C.Physics.PhaseCooldown=C.Physics.BoostCooldown
 C.UI = { Font=Enum.Font.FredokaOne, TitleFont=Enum.Font.LuckiestGuy, Stroke=2.5, Corner=16, Shadow=4, Hover=1.05, Press=.92, Bounce=.12, Open=.25, Toast=3.5, MinimumTap=44, BaseViewport=Vector2.new(1280,720), Panel=Vector2.new(660,520), CargoSlot=48, CargoGap=5, Gold=Color3.fromRGB(255,204,58), Green=Color3.fromRGB(87,214,91), Blue=Color3.fromRGB(54,159,241), Red=Color3.fromRGB(238,76,92), Purple=Color3.fromRGB(163,94,241), Dark=Color3.fromRGB(24,32,53), Paper=Color3.fromRGB(241,248,255), Gray=Color3.fromRGB(159,167,185), WarningHP=.15, SmokeHP=.3, RevealsPerPage=1, FloatSeconds=.8, RotateSpeed=.45, StageFog=400, StageAtmosphere=.22 }
-C.Sounds = { Click="rbxasset://sounds/electronicpingshort.wav", Pickup="rbxasset://sounds/electronicpingshort.wav", Bank="rbxasset://sounds/victory.wav", Fail="rbxasset://sounds/impact_water.mp3", Thump="rbxasset://sounds/impact_generic.mp3", Siren="rbxasset://sounds/uuhhh.mp3", Volume=.35 }
+C.Sounds = { Click="rbxasset://sounds/volume_slider.ogg", Pickup="rbxasset://sounds/volume_slider.ogg", Bank="rbxasset://sounds/action_get_up.mp3", Fail="rbxasset://sounds/impact_water.mp3", Thump="rbxasset://sounds/action_jump_land.mp3", Siren="rbxasset://sounds/ouch.ogg", Volume=.35 }
 C.Mutations = {
  {Name="Normal",Odds=0,Multiplier=1,Color=Color3.fromRGB(156,166,179)},
  {Name="Chrome",Odds=25,Multiplier=2,Color=Color3.fromRGB(209,230,241)},

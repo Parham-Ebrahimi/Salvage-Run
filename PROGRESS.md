@@ -60,3 +60,16 @@ SAVE POINT 4
 - Current recovery also confirms the visible base and stage strip; the earlier black captures were a Studio rendering problem, not proof of visual acceptance.
 
 SAVE POINT 5
+
+## Phase 6 — ownership and income
+
+- Collection stores the best size by item/mutation. Added local owner-only placement highlights, pedestal swap/remove, rotating displays and approach-only nameplates, bought pedestal slots, passive income and capped offline credit.
+- PASS: normal/new mutated/equal duplicate/larger duplicate rules ran in Studio. Golden Microwave sequence normal, normal, Big, normal, Colossal paid $0, $600, $300, $600, $5,100 respectively, without losing the stored best size.
+- PASS: four Chrome items placed in an owned plot. Sum = $4.80/sec; sign initially rounded this to $5/sec (FAIL), then fixed and retested: sign `$4.8/sec` exactly matches income. Inventory and nameplate rates now retain cents.
+- PASS: Inventory PLACE click creates exactly four Highlights in the owner's plot and zero in all other plots. A world click on an occupied pedestal opens SWAP / REMOVE. Actual REMOVE → Inventory PLACE → world click restored the four-item loadout and $4.8/sec income.
+- PASS: offline fixture uses the real join-credit function at a 16-hour absence: $4.8/sec × 8-hour cap × 50% = $69,120 expected and actual. Passive Cash increased during navigation. This tests calculation and credit, not a persistent rejoin.
+- Captures: `phase6-inventory-with-four-finds`, `phase6-placed-items-sign`, `phase6-pedestal-interaction`. Four rotating models visible on pedestals; the sign's text was checked on the server.
+- Found missing local `impact_generic.mp3` audio; replaced all local sound choices with files verified in Studio's installed content. Retest after cold client reload in Phase 7. No gameplay errors.
+- Live persistence and multiplayer ownership under separate actual accounts remain UNVERIFIED. Current local place deliberately uses Studio scratch data.
+
+SAVE POINT 6
