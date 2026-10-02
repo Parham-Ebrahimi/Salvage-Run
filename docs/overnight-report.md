@@ -4,6 +4,14 @@ Run in progress. Owner authorized unattended work, confirmed the recovery checkp
 
 ## Completed / evidence
 
+- T5: all80 stage props grounded through10 separate verified/committed batches.
+  Initial43 >0.3 bounds warnings now0. Builder translates by actual world-space
+  lower bounds, fixing template pivot offsets. Verifier includes floor-only
+  ray grounding warnings without turning warnings into failure. Stage6 first
+  attempt rolled back completely on overly tight0.0001 residual assertion;
+  retry with0.01 float tolerance passed (well below0.3 warning). All structural,
+  floor and plot-border gates passed. SAVE POINTs in world-batches.md.
+
 - T4 real rejoin PASS: stopped first session, >10 seconds elapsed while doing
   source work, joined again; both had one player, BASE, Scratch=false and
   original current vehicle2. No kick or refused load. Output acquired owner

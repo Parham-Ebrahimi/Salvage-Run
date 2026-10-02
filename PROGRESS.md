@@ -210,6 +210,10 @@ STOP: tell the user to save/publish the verified current place to Roblox. Wait f
 - STOP ON ERROR / SAVE POINT: report the failed and fully rolled-back wall batch. Ask the user to save/publish the successfully restored overlap repair. Requested wall enlargement and stud-wall styling are NOT DONE; await further instruction before retrying. No Play control taken.
 # Overnight 2026-10-02 — protected builder verification
 
+T5 verified in Studio:80 props checked after10 atomic stage batches, grounding
+warnings43→0; narrowed/structural gates all pass. Builder uses world-space
+bounds to compensate imported pivot offsets. Conservative mesh bounds noted.
+
 T4 real Studio stop/>10s/rejoin passed twice with persistent profiles,
 Scratch=false, no kick; acquired/released owners printed in Output. All10
 mocked lock tests passed. Studio now Edit; production lease/store unchanged.
