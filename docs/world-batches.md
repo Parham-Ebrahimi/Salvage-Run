@@ -5,6 +5,7 @@ SAVE POINTs are recorded here; unattended authorization permits continuing.
 
 | Batch | Result |
 |---|---|
+| T5 stage9 | 8 props grounded; 6 adjusted; remaining warnings6; inventory/floor/plot-border PASS |
 | T5 stage8 | 8 props grounded; 8 adjusted; remaining warnings12; inventory/floor/plot-border PASS |
 | T5 stage7 | 8 props grounded; 8 adjusted; remaining warnings17; inventory/floor/plot-border PASS |
 | T5 stage6 | 8 props grounded; 8 adjusted; remaining warnings22; inventory/floor/plot-border PASS |
