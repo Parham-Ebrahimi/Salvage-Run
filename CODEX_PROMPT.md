@@ -2,6 +2,10 @@
 
 You are building a complete, playable Roblox game in one long autonomous session. Work through every phase below in order without waiting for me. Do not stop to ask questions; when something is ambiguous, pick the option that best matches the design doc, write the decision in `PROGRESS.md`, and keep going.
 
+**User's recovery and coordination rules (override autonomous continuation above):** At every `SAVE POINT`, stop, tell the user to save/publish the current place to Roblox, and wait for their confirmation before starting the next phase. Do not start or stop a playtest while the user may be testing; obtain an explicit handoff before taking control of Play. Never mark work done in `PROGRESS.md` until verified in the connected Studio. Label source-only checks and untested runtime behavior accurately.
+
+After every world mutation, run the read-only `tools/verify-world.luau` against the Edit DataModel. Expected inventory: four plots with twelve provisioned pedestals each, ten stage floors and arches, eight props per stage, 113 templates, 26 perimeter walls across the whole map (Stage 10 has two sides and the final end wall), and no `Workspace.Baseplate`. If the user is playing, defer Edit mutations and verification without stopping their session.
+
 ## 0. Read first
 
 **This is a from-scratch build.** The Studio place is an empty Baseplate and the repo contains only this prompt, `docs/SALVAGE_RUN_DESIGN.md` and the Rojo scaffold. Nothing from any earlier version of this game exists; do not look for old code or save data. Delete the default Baseplate part once the new ground exists.
@@ -154,6 +158,10 @@ The UI must look and feel like the UI in Steal An Egg and Kick a Lucky Block: ch
 
 **UI kit selection**: `assets/ui-kits/` may contain one or more downloaded UI kits, each in its own subfolder as downloaded. If it has any contents: open every subfolder, compare each kit's buttons/panels/icons against `docs/ui-reference/` and the style rules below, pick the single best match, and write one line in `PROGRESS.md` naming the chosen kit and why. Use only that kit everywhere in the game; do not mix pieces from different kits. If a Toolbox search for "simulator UI kit" or "game UI pack" turns up a Roblox-native kit that fits better, that counts as a candidate too. If `assets/ui-kits/` is empty or nothing fits, build UI from scratch per the rules below.
 
+**Roblox-native kits:** The user places these in `ServerStorage.UIKits`. When a phase needs UI-kit work, check that this folder exists and inspect its contents. If missing, stop UI-kit work and ask the user to place the kit(s) there; do not silently create an empty folder or treat it as provided. Missing UIKits does not block unrelated world recovery. Treat native kits as editor-time references only: the shipped game must never read or require `ServerStorage.UIKits` at runtime. Keep runtime UI implementation in repo-managed `src/client/UIKit.luau` and other source files.
+
+**PNG kits:** These live in `assets/ui-kits/`, with each kit in its own subfolder. Select only icons actually used by the game. List their exact original filenames, kit-relative paths, intended uses and any selected copies in `docs/ui-assets.md`. The user uploads the selected PNGs and supplies the resulting Roblox asset IDs. Store only IDs supplied/confirmed by the user for new uploads in the repo's Luau icon module (`src/client/Icons.luau`); do not upload on the user's behalf. Existing prototype IDs must be identified separately until the user confirms or replaces them. Do not begin selection or other UI-kit work during a world-recovery checkpoint.
+
 Build all UI from one shared `UIKit` module (`src/client/UIKit.luau`) so every button and panel looks consistent:
 
 - **Fonts**: `Enum.Font.FredokaOne` for buttons and body text; `Enum.Font.LuckiestGuy` for titles, big numbers and reveal cards. Button labels in ALL CAPS.
@@ -162,7 +170,7 @@ Build all UI from one shared `UIKit` module (`src/client/UIKit.luau`) so every b
 - **Color meaning, used consistently**: green = buy/confirm/START, yellow-gold = Cash, blue = info/menus, red = close/danger, purple = rare/special. Rarity colors: Normal gray, Chrome silver, Golden gold, Electrified cyan, Crystal ice blue, Blue Flame deep blue, Glitched magenta, Void dark purple.
 - **Panels**: rounded, thick outline, a colored header bar with the title, a round red X close button at the top right. Open with a scale pop (0.8 to 1.0, Back.Out, ~0.25 s) over a dim translucent backdrop; close with a quick shrink.
 - **Layout**: Cash display top-left, large, with a coin icon; "+$X" text that floats up and fades whenever Cash is gained. Menu buttons (Garage, Item Index, Inventory, Settings) as big square icon buttons stacked vertically on the left edge. Toast notifications slide in at top-center. Run HUD (Cargo row, HP bar) bottom-center.
-- **Icons**: use image icons, not plain text. Use the chosen UI kit's icons first if it has one that fits; otherwise find icon decals in the Toolbox, or use PNGs from `assets/ui/` (upload them with `upload_image`). If none of those exist for something, draw a simple icon from frames/shapes rather than leaving text.
+- **Icons**: use image icons, not plain text. Use the chosen UI kit's icons first if it has one that fits; otherwise find icon decals in the Toolbox, or select PNGs and record their filenames in `docs/ui-assets.md`. The user uploads PNGs and provides asset IDs for `src/client/Icons.luau`. If none of those exist for something, draw a simple icon from frames/shapes rather than leaving text.
 - **Juice**: every reward gets motion and sound. Number count-ups, card flips on reveal cards, small particle bursts on rare finds, screen-edge flash for big moments.
 - **Mobile**: use Scale sizing plus `UIAspectRatioConstraint`, a `UIScale` driven by viewport size, and minimum tap targets of roughly 44 px on a phone. Nothing may overlap Roblox's default thumbstick or jump button.
 
@@ -170,7 +178,7 @@ Build all UI from one shared `UIKit` module (`src/client/UIKit.luau`) so every b
 
 ## 13. Phases (do them in order)
 
-For **every** phase: build it, then run a playtest (`start_stop_play`), drive/walk with `user_keyboard_input` / `character_navigation`, take `screen_capture`s, read `get_console_output`, fix all errors and failed checks, then `git commit` with a clear message and append to `PROGRESS.md`: what was built, acceptance results (pass/fail per check), screenshots described, known issues, decisions made. Then write `SAVE POINT <phase>` in `PROGRESS.md` (I will save the place file in Studio when I see it).
+For **every** phase: build it, coordinate an explicit Play handoff with the user, then run a playtest (`start_stop_play`), drive/walk with `user_keyboard_input` / `character_navigation`, take `screen_capture`s, read `get_console_output`, fix errors and failed checks, then `git commit` with a clear message and append to `PROGRESS.md`: what was built, acceptance results (pass/fail per check), screenshots described, known issues, decisions made. Do not mark unverified work done. Write `SAVE POINT <phase>`, stop and tell the user to save/publish the place to Roblox. Wait for confirmation before starting the next phase.
 
 1. **Phase 1, map**: base, plots, Vehicle Bay, Safe Line, walls, all 10 stage bands with ground, atmosphere, arches and props. Check: every stage is visually distinct in a screenshot; nothing floats or clips; walls block leaving.
 2. **Phase 2, vehicles**: all 10 vehicles inserted, safety-scanned, set up on the shared controller with Config stats; START button; spawn aligned with the player's position in the bay; camera; flip recovery. Check: all driving requirements in Section 4 for vehicles 1, 5 and 10; no console errors.

@@ -6,7 +6,7 @@
 - `docs/ui-reference/` is absent. No reference images were supplied, so side-by-side reference comparison cannot be verified. Follow the specified chunky rounded outlines, bright semantic colors, Fredoka/Luckiest Guy typography, icon buttons, bouncy transitions and sparse mobile HUD.
 - Inspect the single supplied Free Icon Pack 3.0.1 (Basic) and use it consistently for icons; build panels/buttons in the shared UIKit. No artwork from another game.
 - Choices: forward is negative Z; Safe Line Z=0; strip 160 wide, 3500 long; base 360 wide, 180 deep; exactly four plots. Plain banked items pay Cash and also register a displayable Collection entry. Mutation size rolls apply to all banked items.
-- No permission questions: the supplied prompt authorizes the complete build, world editing, safety scans, debugging and commits.
+- Current user coordination override: stop at each SAVE POINT and tell the user to save/publish to Roblox; wait for confirmation before the next phase. Coordinate Play control explicitly while the user may be testing. UIKits is not a recovery blocker; ask for it when a UI phase needs it, and do not start UI-kit work during recovery.
 
 ## Verification policy
 Only mark PASS after observed evidence. Missing references, live persistence verification, phone emulation and unavailable assets must be reported, never silently treated as passed.
@@ -86,3 +86,36 @@ SAVE POINT 6
 - Production save namespace is untouched. Actual two-player concurrent lock contention and live-server performance remain UNVERIFIED.
 
 SAVE POINT 7
+
+## Recovery checkpoint after reconnect — verified in Studio Edit
+
+- Target: reopened user-owned place **120476079479285**, Studio `6826b07e-51dc-4354-9b62-f61d51c00698`. Inspected current Edit contents; did not start or stop a playtest.
+- Deleted the reintroduced `Workspace.Baseplate`. Initial verification passed, but a subsequent inventory check detected it again. Deleted it again and confirmed absence in a separate read. The cause of reappearance is not established; this is why the new verifier must run after every world change.
+- Added `tools/verify-world.luau`, a read-only Edit assertion routine. Actual Studio result: PASS, 4 plots, 48 provisioned pedestals, 10 floors/arches, 80 placed props, 113 sanitized templates (60 items / 10 vehicles / 10 mobs / 33 props), 26 collidable perimeter walls, 3 walls at Stage 10, no Baseplate. User confirmed 26 walls means the whole perimeter.
+- A rebuild routine already exists: `tools/build-world.luau` uses Config plus audited templates to reconstruct the static map. `default.project.json` also builds the complete saved map/template snapshot. Documented recovery and required verification in `docs/world-recovery.md`.
+
+### Post-original-deletion edit ledger
+
+Checked PROGRESS order, git history after Phase 1 (`522a571`), and the relevant diffs. These are the later world/template changes and runtime-generated world features:
+
+| Order / checkpoint | World edit | Current Studio spot check |
+|---|---|---|
+| Phase 1 repairs after the initial build | Reinserted/repaired grass tuft, washing machine, furnace, anchor, lab equipment and test tube templates; cleared asset capabilities and removed imported scripts | All six have geometry, PrimaryParts, anchored parts, empty capability flags and zero scripts. Their placed stage props exist. |
+| Phase 2 — `c5df8f4` | Imported and sanitized ten vehicle shells; normalized templates; runtime VehicleSeat/chassis, spawn alignment, collision groups and follow control; PNG icon IDs in the client source | All ten vehicle templates present with PrimaryParts, anchored geometry and zero import scripts. VehicleService and client controller match repo source. Vehicles and HUD are generated in Play; no new driving test was run. |
+| Phase 3 — `ee183dd` | Imported sixty item templates; six part-built fallbacks; replaced Saucer Fragment with audited UFO hull | Exactly sixty items present. Engine Block, Crucible, Quantum Drive, Reactor Rod, Alien Power Cell and Impossible Ring have geometry/PrimaryParts and no scripts. Saucer Fragment is the one-part hull from asset 162741606. The six-part spaceship-wreck fallback also remains. |
+| Phase 3 — `ee183dd` | Fixed Safe Line collision and vehicle shell ground-height offset | Safe Line is 160 studs wide, CanCollide=false, CanTouch=false. Live VehicleService contains the shell offset fix and matches the repo. |
+| Phase 3 — `ee183dd` | Runtime loot density, pickup ring/progress/arc/icon effects, temporary Cargo and inward banking | CollectibleService, CollectionService, ItemVisual and related client source remain. These are generated runtime features, not saved map instances; functional rechecks await an agreed Play handoff. |
+| Phase 4 — `7909a05` | Ten sanitized mob templates, including corrected lab robot; runtime fifty mobs, forty hazards, sixteen crates, bolts/puddles, damage warnings and death FX | All ten mob templates present with geometry/PrimaryParts, anchored parts and no imported AI. Lab robot is asset 2783823576. EnemyService and CollectibleService source match repo; runtime parts are correctly absent in Edit. |
+| Phase 5 — `8eb8f60` | Recovered/exported the complete static map and 113 models; mutation treatments and temporary eight-mutation showcase | Four plots, ten bands and their signs, eight props per stage, Stage 4 water edges, Stage 10 grid, lighting and all models remain. Mutation source matches repo. The showcase was a temporary Play fixture and must not be saved into the map. |
+| Phase 6 — `48eadf0` | Runtime placed-item displays, approach nameplates, owner headshots and income signs; corrected fractional income formatting | All four permanent income signs and all 48 provisioned pedestals exist. Live DisplayService and Format contain the precision fix and match repo. Displayed finds/headshots restore at runtime from player data; Edit has no owner fixtures. |
+| Phase 7 — `45d99d5` | Shared keyboard control repair; progression and persistence checks | Live VehicleController includes explicit W/S/A/D and matches repo. This checkpoint introduced no additional static map pieces. |
+
+- No later static/template edit was missing, so no replacement map or models were built. The only missing recovery operation redone was Baseplate removal. Thirteen relevant live source modules were compared with repo source hashes and matched, including vehicle, enemy, collection, economy, data, mutation and UI implementations.
+- All ten floor colors/materials match Config. **Visual quality is not accepted by this inventory check:** reopened-place 3D capture is black again. Bounding-box checks also reveal existing prop grounding offsets in several stages, up to ~9.44 studs; floating/clipping cleanup remains outstanding. Phase 1's visual acceptance remains unresolved.
+- Data module is the custom `src/server/DataService.luau`, not an external profile library. Verified live source: production `SalvageRun_v1`; Studio `SalvageRun_v1_Studio`; lease 180 seconds, autosave/renewal every 60 seconds. UpdateAsync preserves Data and replaces an expired foreign lock with the new token. A fresh foreign lock is rejected. Save checks ownership to prevent an old session from overwriting a new one. These requested protections already exist; no forced active-lock takeover or new DataStore write was performed.
+- Console history includes previous Save failures and save-session kicks. They are not treated as fixed by a source inspection. Runtime lock contention needs a coordinated test; no active user session was interrupted.
+- Updated CODEX_PROMPT with publish/Play handoffs, mandatory world verification, editor-only `ServerStorage.UIKits`, PNG location, used-icons-only manifest and user-supplied upload-ID workflow. UIKits is not ready and does not block this recovery. Icon selection, `docs/ui-assets.md` creation and ID changes are deferred until the UI phase, per the user's latest instruction.
+
+SAVE POINT 7 — RECOVERY
+
+STOP: tell the user to save/publish the verified current place to Roblox. Wait for confirmation before Phase 8. Ask for UIKits when that phase needs UI-kit work; coordinate an explicit Play handoff before testing.
